@@ -1,0 +1,21 @@
+# Python 基本ツール
+ipykernel
+jupyter
+
+# LangChain 本体と関連パッケージ
+langchain==1.1.2
+langchain-community==0.4.1
+langchain-openai==1.1.0
+langchain-core==1.1.0
+pypdf
+
+# ベクトルDB関連（簡単なローカル用途）
+chromadb==1.1.0
+
+# .envなどを使う場合
+python-dotenv
+
+# その他、必要に応じて
+tiktoken
+requests
+python-dotenv
