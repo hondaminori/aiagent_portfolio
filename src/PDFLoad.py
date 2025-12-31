@@ -6,22 +6,22 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from dotenv import load_dotenv
-from pathlib import Path
+from common.paths import DOC_DIR, ENV_PATH
 import os
 
-env_path = Path(__file__).resolve().parents[1] / "config" / ".env"
-load_dotenv(env_path)
+
+print(f"DOC_DIR: {DOC_DIR}")
+print(f"ENV_PATH: {ENV_PATH}")
+
+load_dotenv(ENV_PATH)
 api_key = os.getenv("OPENAI_API_KEY")
 
-main_path = os.path.dirname(os.path.abspath(__file__))
-os.chdir(main_path)
-
-files = [f for f in os.listdir('../doc') if os.path.isfile(os.path.join('../doc', f))]
+files = [f for f in os.listdir(DOC_DIR) if os.path.isfile(os.path.join(DOC_DIR, f))]
 
 documents = []
 
 for file in files:
-    loader = PyPDFLoader(os.path.join('../doc', file))
+    loader = PyPDFLoader(os.path.join(DOC_DIR, file))
     documents.extend(loader.load())
 
 recursive_splitter = RecursiveCharacterTextSplitter(
