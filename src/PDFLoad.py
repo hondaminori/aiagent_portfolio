@@ -16,8 +16,13 @@ api_key = os.getenv("OPENAI_API_KEY")
 main_path = os.path.dirname(os.path.abspath(__file__))
 os.chdir(main_path)
 
-loader = PyPDFLoader("LangChain株式会社IR資料.pdf")
-document = loader.load()
+files = [f for f in os.listdir('../doc') if os.path.isfile(os.path.join('../doc', f))]
+
+documents = []
+
+for file in files:
+    loader = PyPDFLoader(os.path.join('../doc', file))
+    documents.extend(loader.load())
 
 recursive_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1000,
@@ -25,7 +30,7 @@ recursive_splitter = RecursiveCharacterTextSplitter(
     separators=["\n\n", "\n", "。", "、", " ", ""]
 )
 
-docs = recursive_splitter.split_documents(document)
+docs = recursive_splitter.split_documents(documents)
 
 embeddings = OpenAIEmbeddings(
     model="text-embedding-ada-002",
@@ -64,7 +69,7 @@ chain = (
     | prompt | llm | output_parser
 )
 
-query = "代表取締役は誰？"
+query = "退職金について教えてください。"
 
 result = chain.invoke(query)
 
