@@ -11,15 +11,15 @@ import os
 
 load_dotenv(ENV_PATH)
 
+# 環境変数の取得
 api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
-    raise RuntimeError("OPENAI_API_KEY is not set")
-
+embedding_model_name = os.getenv("EMBEDDING_MODEL_NAME")
+chat_model_name = os.getenv("CHAT_MODEL_NAME")
+chunk_size = int(os.getenv("CHUNK_SIZE"))
+chunk_overlap = int(os.getenv("CHUNK_OVERLAP"))
+text_splitter_separators = os.getenv("TEXT_SPLITTER_SEPARATORS")
 
 pdf_paths = sorted(DOC_DIR.glob("*.pdf"))
-
-
-# files = [f for f in os.listdir(DOC_DIR) if os.path.isfile(os.path.join(DOC_DIR, f))]
 
 documents = []
 
@@ -27,20 +27,16 @@ for pdf_path in pdf_paths:
     loader = PyPDFLoader(str(pdf_path))
     documents.extend(loader.load())
 
-# for file in files:
-#     loader = PyPDFLoader(os.path.join(DOC_DIR, file))
-#     documents.extend(loader.load())
-
 recursive_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
-    chunk_overlap=200,
-    separators=["\n\n", "\n", "。", "、", " ", ""]
+    chunk_size=chunk_size,
+    chunk_overlap=chunk_overlap,
+    separators=text_splitter_separators
 )
 
 docs = recursive_splitter.split_documents(documents)
 
 embeddings = OpenAIEmbeddings(
-    model="text-embedding-ada-002",
+    model=embedding_model_name,
     api_key=api_key
 )
 
@@ -58,7 +54,7 @@ retriever = vectordb.as_retriever(
 )
 
 llm = ChatOpenAI(
-    model_name="gpt-4o-mini",
+    model_name=chat_model_name,
     temperature=0,
     api_key=api_key
 )
