@@ -1,11 +1,5 @@
 from pathlib import Path
 
-# PROJECT_ROOT = Path(__file__).resolve().parents[2]
-
-# DOC_DIR = PROJECT_ROOT / "doc"
-
-# ENV_PATH = PROJECT_ROOT / "config" / ".env"
-
 def find_project_root(start: Path) -> Path:
     current = start.resolve()
     for parent in [current, *current.parents]:

@@ -9,20 +9,27 @@ from dotenv import load_dotenv
 from common.paths import DOC_DIR, ENV_PATH
 import os
 
-
-print(f"DOC_DIR: {DOC_DIR}")
-print(f"ENV_PATH: {ENV_PATH}")
-
 load_dotenv(ENV_PATH)
-api_key = os.getenv("OPENAI_API_KEY")
 
-files = [f for f in os.listdir(DOC_DIR) if os.path.isfile(os.path.join(DOC_DIR, f))]
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise RuntimeError("OPENAI_API_KEY is not set")
+
+
+pdf_paths = sorted(DOC_DIR.glob("*.pdf"))
+
+
+# files = [f for f in os.listdir(DOC_DIR) if os.path.isfile(os.path.join(DOC_DIR, f))]
 
 documents = []
 
-for file in files:
-    loader = PyPDFLoader(os.path.join(DOC_DIR, file))
+for pdf_path in pdf_paths:
+    loader = PyPDFLoader(str(pdf_path))
     documents.extend(loader.load())
+
+# for file in files:
+#     loader = PyPDFLoader(os.path.join(DOC_DIR, file))
+#     documents.extend(loader.load())
 
 recursive_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1000,
@@ -74,3 +81,12 @@ query = "退職金について教えてください。"
 result = chain.invoke(query)
 
 print(result)
+
+
+
+"""
+＜メモ＞
+
+
+
+"""
