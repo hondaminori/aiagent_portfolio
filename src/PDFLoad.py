@@ -1,15 +1,15 @@
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 from dotenv import load_dotenv
 from common.paths import ENV_PATH
 from common.prompts import SYSTEM_PROMPT
-from common.config import CHUNK_SIZE, CHUNK_OVERLAP, TEXT_SPLITTER_SEPARATORS
 from preprosessing.source import load_documents
 from preprosessing.normalize import normalize_documents
+from preprosessing.chunk import chunk_documents
+from preprosessing.embed import create_embedding
 import os
 
 load_dotenv(ENV_PATH)
@@ -19,29 +19,16 @@ api_key = os.getenv("OPENAI_API_KEY")
 embedding_model_name = os.getenv("EMBEDDING_MODEL_NAME")
 chat_model_name = os.getenv("CHAT_MODEL_NAME")
 
-recursive_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=CHUNK_SIZE,
-    chunk_overlap=CHUNK_OVERLAP,
-    separators=TEXT_SPLITTER_SEPARATORS
-)
-
 documents = load_documents()
 
 normalized_documents = normalize_documents(documents)
 
-# ファイルに文字列を書き込む
-with open("output_normalize後.txt", "w", encoding="utf-8") as f:
-    f.write(str(normalized_documents))
+chunked_documents = chunk_documents(normalized_documents)
 
-docs = recursive_splitter.split_documents(normalized_documents)
-
-embeddings = OpenAIEmbeddings(
-    model=embedding_model_name,
-    api_key=api_key
-)
+embeddings = create_embedding(api_key, embedding_model_name)
 
 vectordb = Chroma.from_documents(
-    documents=docs,
+    documents=chunked_documents,
     embedding=embeddings,
     collection_name="IRDoc"
 )
