@@ -1,4 +1,3 @@
-# from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
@@ -10,6 +9,7 @@ from common.paths import ENV_PATH
 from common.prompts import SYSTEM_PROMPT
 from common.config import CHUNK_SIZE, CHUNK_OVERLAP, TEXT_SPLITTER_SEPARATORS
 from preprosessing.source import load_documents
+from preprosessing.normalize import normalize_documents
 import os
 
 load_dotenv(ENV_PATH)
@@ -26,7 +26,14 @@ recursive_splitter = RecursiveCharacterTextSplitter(
 )
 
 documents = load_documents()
-docs = recursive_splitter.split_documents(documents)
+
+normalized_documents = normalize_documents(documents)
+
+# ファイルに文字列を書き込む
+with open("output_normalize後.txt", "w", encoding="utf-8") as f:
+    f.write(str(normalized_documents))
+
+docs = recursive_splitter.split_documents(normalized_documents)
 
 embeddings = OpenAIEmbeddings(
     model=embedding_model_name,
