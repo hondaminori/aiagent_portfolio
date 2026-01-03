@@ -35,7 +35,6 @@ def build_vectorstore(
         persist_directory='/tmp/chroma'
     )
 
-    vectordb.persist() # 保険のため（無くても動作するはず）
     return vectordb
 
 def load_vectorstore(
@@ -55,7 +54,6 @@ def load_vectorstore(
     vectordb = Chroma(
         collection_name=collection_name,
         embedding_function=embedding,
-        # persist_directory=str(CHROMA_PERSIST_DIR)
         persist_directory='/tmp/chroma'
     )
 
