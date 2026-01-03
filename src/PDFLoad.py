@@ -1,4 +1,3 @@
-from langchain_community.vectorstores import Chroma
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -10,6 +9,7 @@ from preprosessing.source import load_documents
 from preprosessing.normalize import normalize_documents
 from preprosessing.chunk import chunk_documents
 from preprosessing.embed import create_embedding
+from preprosessing.vector_backend import build_vectorstore
 import os
 
 load_dotenv(ENV_PATH)
@@ -27,10 +27,10 @@ chunked_documents = chunk_documents(normalized_documents)
 
 embeddings = create_embedding(api_key, embedding_model_name)
 
-vectordb = Chroma.from_documents(
+vectordb = build_vectorstore(
     documents=chunked_documents,
     embedding=embeddings,
-    collection_name="IRDoc"
+    collection_name="WorkRules"
 )
 
 retriever = vectordb.as_retriever(

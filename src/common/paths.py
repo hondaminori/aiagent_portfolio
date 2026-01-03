@@ -11,3 +11,4 @@ PROJECT_ROOT = find_project_root(Path(__file__))
 
 DOC_DIR = PROJECT_ROOT / "doc"
 ENV_PATH = PROJECT_ROOT / "config" / ".env"
+CHROMA_PERSIST_DIR = PROJECT_ROOT / "db" / "chroma_db"
