@@ -1,7 +1,4 @@
 from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 from dotenv import load_dotenv
 from common.paths import ENV_PATH
 from common.prompts import SYSTEM_PROMPT
@@ -9,8 +6,9 @@ from preprocessing.source import load_documents
 from preprocessing.normalize import normalize_documents
 from preprocessing.chunk import chunk_documents
 from preprocessing.embed import create_embedding
-from preprocessing.vector_backend import build_vectorstore, load_vectorstore
-from query.retriever import create_retriever, format_retrieved_docs
+from preprocessing.vector_backend import load_vectorstore
+from query.retrieve import create_retriever
+from query.generate import create_chain
 import os
 
 load_dotenv(ENV_PATH)
@@ -51,20 +49,10 @@ llm = ChatOpenAI(
     api_key=api_key
 )
 
-prompt = ChatPromptTemplate.from_messages([
-    ("system", SYSTEM_PROMPT),
-    ("human", "【コンテキスト】\n{context}\n\n【質問】\n{input}")
-])
-
-output_parser = StrOutputParser()
-
-chain = (
-    {
-        "context": retriever | RunnableLambda(format_retrieved_docs), 
-        "input": RunnablePassthrough()
-    }
-    | prompt | llm | output_parser
-)
+chain = create_chain(
+    retriever=retriever,
+    llm=llm,
+    system_prompt=SYSTEM_PROMPT)
 
 query = "退職金について教えてください。"
 
