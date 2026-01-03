@@ -1,14 +1,10 @@
-from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from common.paths import ENV_PATH
-from common.prompts import SYSTEM_PROMPT
 from preprocessing.source import load_documents
 from preprocessing.normalize import normalize_documents
 from preprocessing.chunk import chunk_documents
 from preprocessing.embed import create_embedding
-from preprocessing.vector_backend import load_vectorstore
-from query.retrieve import create_retriever
-from query.generate import create_chain
+from query.service import create_service_from_env
 import os
 
 load_dotenv(ENV_PATH)
@@ -32,30 +28,18 @@ embeddings = create_embedding(api_key, embedding_model_name)
 #     collection_name="WorkRules"
 # )
 
-vectordb = load_vectorstore(
-    embedding=embeddings,
-    collection_name="WorkRules"
-)
+# vectordb = load_vectorstore(
+#     embedding=embeddings,
+#     collection_name="WorkRules"
+# )
 
-retriever = create_retriever(
-    vectordb=vectordb,
+service = create_service_from_env(
+    api_key=api_key,
+    embedding_model_name=embedding_model_name,
+    chat_model_name=chat_model_name,
+    collection_name="WorkRules",
+    k=3,
     search_type="similarity",
-    k=3
-)
+    )
 
-llm = ChatOpenAI(
-    model_name=chat_model_name,
-    temperature=0,
-    api_key=api_key
-)
-
-chain = create_chain(
-    retriever=retriever,
-    llm=llm,
-    system_prompt=SYSTEM_PROMPT)
-
-query = "退職金について教えてください。"
-
-result = chain.invoke(query)
-
-print(result)
+print(service.ask("退職金について教えてください。"))
