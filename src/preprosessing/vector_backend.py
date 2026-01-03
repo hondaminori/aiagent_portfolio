@@ -31,7 +31,32 @@ def build_vectorstore(
         documents=documents,
         embedding=embedding,
         collection_name=collection_name,
-        persist_directory=str(CHROMA_PERSIST_DIR)
+        # persist_directory=str(CHROMA_PERSIST_DIR)
+        persist_directory='/tmp/chroma'
+    )
+
+    vectordb.persist() # 保険のため（無くても動作するはず）
+    return vectordb
+
+def load_vectorstore(
+    embedding: OpenAIEmbeddings,
+    collection_name: str
+):
+    """
+    永続化された VectorStore（LangChain）のインスタンスを読み込む。
+
+    Args:
+        embedding: LangChain の Embeddings 互換オブジェクト（現在は OpenAIEmbeddings）
+        collection_name (str): コレクション名
+    Returns:
+        VectorStore（LangChain）のインスタンス
+    """
+
+    vectordb = Chroma(
+        collection_name=collection_name,
+        embedding_function=embedding,
+        # persist_directory=str(CHROMA_PERSIST_DIR)
+        persist_directory='/tmp/chroma'
     )
 
     return vectordb

@@ -9,7 +9,7 @@ from preprosessing.source import load_documents
 from preprosessing.normalize import normalize_documents
 from preprosessing.chunk import chunk_documents
 from preprosessing.embed import create_embedding
-from preprosessing.vector_backend import build_vectorstore
+from preprosessing.vector_backend import build_vectorstore, load_vectorstore
 import os
 
 load_dotenv(ENV_PATH)
@@ -27,8 +27,13 @@ chunked_documents = chunk_documents(normalized_documents)
 
 embeddings = create_embedding(api_key, embedding_model_name)
 
-vectordb = build_vectorstore(
-    documents=chunked_documents,
+# vectordb = build_vectorstore(
+#     documents=chunked_documents,
+#     embedding=embeddings,
+#     collection_name="WorkRules"
+# )
+
+vectordb = load_vectorstore(
     embedding=embeddings,
     collection_name="WorkRules"
 )
