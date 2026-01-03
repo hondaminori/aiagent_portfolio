@@ -5,11 +5,11 @@ from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 from dotenv import load_dotenv
 from common.paths import ENV_PATH
 from common.prompts import SYSTEM_PROMPT
-from preprosessing.source import load_documents
-from preprosessing.normalize import normalize_documents
-from preprosessing.chunk import chunk_documents
-from preprosessing.embed import create_embedding
-from preprosessing.vector_backend import build_vectorstore, load_vectorstore
+from preprocessing.source import load_documents
+from preprocessing.normalize import normalize_documents
+from preprocessing.chunk import chunk_documents
+from preprocessing.embed import create_embedding
+from preprocessing.vector_backend import build_vectorstore, load_vectorstore
 import os
 
 load_dotenv(ENV_PATH)

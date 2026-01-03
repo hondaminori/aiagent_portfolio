@@ -4,7 +4,7 @@ vector_backend.py
 VectorDB の backend を隠蔽するファサード。
 Chroma / PostgreSQL などの実装差をここで吸収する。
 """
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
 from common.paths import CHROMA_PERSIST_DIR

@@ -7,10 +7,8 @@ langchain==1.1.2
 langchain-community==0.4.1
 langchain-openai==1.1.0
 langchain-core==1.1.0
+langchain-chroma==1.0.0
 pypdf
-
-# ベクトルDB関連（簡単なローカル用途）
-chromadb==1.1.0
 
 # .envなどを使う場合
 python-dotenv
