@@ -10,6 +10,7 @@ from preprocessing.normalize import normalize_documents
 from preprocessing.chunk import chunk_documents
 from preprocessing.embed import create_embedding
 from preprocessing.vector_backend import build_vectorstore, load_vectorstore
+from query.retriever import create_retriever, format_retrieved_docs
 import os
 
 load_dotenv(ENV_PATH)
@@ -38,9 +39,10 @@ vectordb = load_vectorstore(
     collection_name="WorkRules"
 )
 
-retriever = vectordb.as_retriever(
+retriever = create_retriever(
+    vectordb=vectordb,
     search_type="similarity",
-    search_kwargs={"k": 3}
+    k=3
 )
 
 llm = ChatOpenAI(
@@ -48,10 +50,6 @@ llm = ChatOpenAI(
     temperature=0,
     api_key=api_key
 )
-
-def format_docs(retrieved_docs):
-    """Retriever が返す Document の配列を LLM 用テキストに整形する"""
-    return "\n\n".join(d.page_content for d in retrieved_docs)
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", SYSTEM_PROMPT),
@@ -62,7 +60,7 @@ output_parser = StrOutputParser()
 
 chain = (
     {
-        "context": retriever | RunnableLambda(format_docs), 
+        "context": retriever | RunnableLambda(format_retrieved_docs), 
         "input": RunnablePassthrough()
     }
     | prompt | llm | output_parser
