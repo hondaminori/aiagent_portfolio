@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 
 from common.paths import ENV_PATH
-from query.service import create_service_from_env
+from rag_core.query.service import create_service_from_env
 
 load_dotenv(ENV_PATH)
 
@@ -15,4 +15,4 @@ service = create_service_from_env(
     search_type="similarity",
 )
 
-print(service.ask("退職金について教えてください。"))
+print(service.ask("育休について教えてください。"))

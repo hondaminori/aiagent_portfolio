@@ -1,10 +1,10 @@
 from dotenv import load_dotenv
 from common.paths import ENV_PATH
-from preprocessing.source import load_documents
-from preprocessing.normalize import normalize_documents
-from preprocessing.chunk import chunk_documents
-from preprocessing.embed import create_embedding
-from preprocessing.vector_backend import build_vectorstore
+from rag_core.preprocessing.source import load_documents
+from rag_core.preprocessing.normalize import normalize_documents
+from rag_core.preprocessing.chunk import chunk_documents
+from rag_core.preprocessing.embed import create_embedding
+from rag_core.preprocessing.vector_backend import build_vectorstore
 import os
 
 load_dotenv(ENV_PATH)

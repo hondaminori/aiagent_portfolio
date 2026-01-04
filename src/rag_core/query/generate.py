@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
-from query.retrieve import format_retrieved_docs
+from rag_core.query.retrieve import format_retrieved_docs
 from typing import Any
 
 def create_prompt(system_prompt: str) -> ChatPromptTemplate:

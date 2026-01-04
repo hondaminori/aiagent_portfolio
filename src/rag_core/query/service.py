@@ -12,10 +12,10 @@ from typing import Any
 from langchain_openai import ChatOpenAI
 
 from common.prompts import SYSTEM_PROMPT
-from preprocessing.embed import create_embedding
-from preprocessing.vector_backend import load_vectorstore
-from query.retrieve import create_retriever
-from query.generate import create_chain
+from rag_core.preprocessing.embed import create_embedding
+from rag_core.preprocessing.vector_backend import load_vectorstore
+from rag_core.query.retrieve import create_retriever
+from rag_core.query.generate import create_chain
 
 
 @dataclass
