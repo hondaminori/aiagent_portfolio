@@ -36,7 +36,6 @@ def init_service() -> None:
         search_type=os.getenv("SEARCH_TYPE", "similarity"),
     )
 
-
 def get_service():
     """
     ルーターから呼ばれる。初期化済み service を返す。

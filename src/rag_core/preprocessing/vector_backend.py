@@ -7,7 +7,6 @@ Chroma / PostgreSQL などの実装差をここで吸収する。
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
-from common.paths import CHROMA_PERSIST_DIR
 from typing import List 
 
 def build_vectorstore(
@@ -31,7 +30,6 @@ def build_vectorstore(
         documents=documents,
         embedding=embedding,
         collection_name=collection_name,
-        # persist_directory=str(CHROMA_PERSIST_DIR)
         persist_directory='/tmp/chroma'
     )
 

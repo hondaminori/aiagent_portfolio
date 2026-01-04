@@ -1,5 +1,5 @@
 from langchain_community.document_loaders import PyPDFLoader
-from common.paths import DOC_DIR, ENV_PATH
+from common.paths import DOC_DIR
 
 def load_documents():
     pdf_paths = sorted(DOC_DIR.glob("*.pdf"))
