@@ -1,10 +1,14 @@
 from dotenv import load_dotenv
-import os
-
 from common.paths import ENV_PATH
 from rag_core.query.service import create_service_from_env
+from common.logging_config import get_logger
+import os
+
 
 load_dotenv(ENV_PATH)
+
+logger = get_logger(__name__)
+logger.info("アプリ起動")
 
 service = create_service_from_env(
     api_key=os.getenv("OPENAI_API_KEY"),
