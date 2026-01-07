@@ -8,7 +8,12 @@ normalize 済み Document をチャンク分割する。
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from common.config import CHUNK_SIZE, CHUNK_OVERLAP, TEXT_SPLITTER_SEPARATORS
+from common.logging_config import logging
+from common.logging_config import log_start_end
 
+logger = logging.getLogger(__name__)
+
+@log_start_end
 def chunk_documents(documents: list[Document]) -> list[Document]:
     """
     normalize 済み Document をチャンク分割する。

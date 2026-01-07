@@ -4,6 +4,7 @@ import os
 from logging.handlers import TimedRotatingFileHandler
 from pathlib import Path
 from common.paths import LOG_DIR
+import functools
 
 def _create_log_handler() -> logging.Handler:
     """
@@ -13,7 +14,7 @@ def _create_log_handler() -> logging.Handler:
     log_level = os.getenv("LOG_LEVEL", "INFO").upper()
 
     formatter = logging.Formatter(
-        fmt="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+        fmt="%(asctime)s | %(levelname)s | %(name)s | %(target_func)s | %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
@@ -88,3 +89,20 @@ def setup_logging() -> None:
     handler.setFormatter(formatter)
 
     root.addHandler(handler)
+
+
+def log_start_end(func):
+    logger = logging.getLogger(func.__module__)
+
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        logger.info(f"{func.__name__} を開始します")
+        try:
+            result = func(*args, **kwargs)
+            logger.info(f"{func.__name__} を終了します")
+            return result
+        except Exception:
+            logger.exception("エラーが発生しました")
+            raise
+
+    return wrapper

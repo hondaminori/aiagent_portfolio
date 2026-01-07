@@ -1,6 +1,11 @@
 from langchain_core.documents import Document
+from common.logging_config import logging
+from common.logging_config import log_start_end
 import re
 
+logger = logging.getLogger(__name__)
+
+@log_start_end
 def normalize_documents(documents: list[Document]) -> list[Document]:
     """
     ソースから取り込んだデータをキレイにする。
@@ -16,6 +21,7 @@ def normalize_documents(documents: list[Document]) -> list[Document]:
     Returns:
         List[Document]: normalizeされたDocumentリスト
     """
+
     docs = filter_documents(documents)
     docs = clean_documents(docs)
 
@@ -39,6 +45,7 @@ def filter_documents(documents: list[Document]) -> list[Document]:
         if doc.page_content and doc.page_content.strip() != "":
             filtered_documents.append(doc)
 
+    logger.info(f"filter_documents: {len(documents)} 件のうち {len(filtered_documents)} 件を有効と判断しました。")
     return filtered_documents
 
 def clean_documents(documents: list[Document]) -> list[Document]:

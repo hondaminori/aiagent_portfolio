@@ -8,7 +8,12 @@ from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
 from typing import List 
+from common.logging_config import logging
+from common.logging_config import log_start_end
 
+logger = logging.getLogger(__name__)
+
+@log_start_end
 def build_vectorstore(
     documents: List[Document],
     embedding: OpenAIEmbeddings,

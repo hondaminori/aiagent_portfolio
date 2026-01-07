@@ -1,16 +1,16 @@
 from langchain_community.document_loaders import PyPDFLoader
 from common.paths import DOC_DIR
-from common.logging_config import get_logger
+from common.logging_config import logging
+from common.logging_config import log_start_end
 
-# logger = get_logger(__name__)
-
-import logging
 logger = logging.getLogger(__name__)
 
+@log_start_end
 def load_documents():
     """
     PDFファイルからドキュメントを読み込む
     """
+    # logger.info("load_documents() を開始します")
 
     if not DOC_DIR.exists():
         logger.error(f"ドキュメント格納ディレクトリが存在しません: {DOC_DIR}")
@@ -33,4 +33,6 @@ def load_documents():
             logger.error(f"PDFファイルの読み込みに失敗しました: {pdf_path} | error: {e}")
 
     logger.info(f"{len(pdf_paths)} 本のPDFファイルから {len(documents)} 件のドキュメントを読み込みました。")
+
+    # logger.info("load_documents() を終了します")
     return documents
