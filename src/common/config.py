@@ -11,3 +11,7 @@ TEXT_SPLITTER_SEPARATORS = [
     " ",
     ""
 ]
+
+# retriever関連
+SEARCH_KWARGS = 100
+SEARCH_TYPE = "similarity"

@@ -9,6 +9,25 @@ from common.paths import ENV_PATH
 # --- 起動時に1回だけ Service を作って使い回す ---
 @st.cache_resource
 def get_service():
+    """
+    環境変数を読み込み、サービスを初期化して返します。
+
+    必須の環境変数:
+        - OPENAI_API_KEY: OpenAI APIのキー。
+        - EMBEDDING_MODEL_NAME: 使用する埋め込みモデルの名前。
+        - CHAT_MODEL_NAME: 使用するチャットモデルの名前。
+
+    オプションの環境変数:
+        - COLLECTION_NAME: コレクション名 (デフォルト: "WorkRules")。
+        - TOP_K: 検索結果の上位K件を返す (デフォルト: 3)。
+        - SEARCH_TYPE: 検索タイプ (デフォルト: "similarity")。
+
+    Returns:
+        object: 環境変数に基づいて初期化されたサービスオブジェクト。
+
+    Raises:
+        RuntimeError: 必須の環境変数が設定されていない場合。
+    """
     load_dotenv(ENV_PATH)
 
     api_key = os.getenv("OPENAI_API_KEY")

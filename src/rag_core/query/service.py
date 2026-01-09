@@ -10,13 +10,12 @@ from dataclasses import dataclass
 from typing import Any
 
 from langchain_openai import ChatOpenAI
-
-from common.prompts import SYSTEM_PROMPT
 from rag_core.preprocessing.embed import create_embedding
 from rag_core.preprocessing.vector_backend import load_vectorstore
 from rag_core.query.retrieve import create_retriever
 from rag_core.query.generate import create_chain
-
+from common.logging_config import log_start_end
+from common.prompts import SYSTEM_PROMPT
 
 @dataclass
 class RAGService:
@@ -27,7 +26,7 @@ class RAGService:
         """質問を受け取り回答を返す（UIからはこれだけ呼ぶ）"""
         return self.chain.invoke(query)
 
-
+@log_start_end
 def create_service_from_env(
     api_key: str,
     embedding_model_name: str,

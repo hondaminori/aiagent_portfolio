@@ -34,5 +34,9 @@ def load_documents():
 
     logger.info(f"{len(pdf_paths)} 本のPDFファイルから {len(documents)} 件のドキュメントを読み込みました。")
 
+    for doc in documents:
+        _pagecontent_preview = doc.page_content.replace(chr(10), ' ')[:100]
+        logger.debug(f"ドキュメント内容の一部: {_pagecontent_preview}...")
+
     # logger.info("load_documents() を終了します")
     return documents
