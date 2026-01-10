@@ -4,7 +4,11 @@ from dotenv import load_dotenv
 
 from rag_core.query.service import create_service_from_env
 from common.paths import ENV_PATH
+from common.bootstrap import init_app
+import logging
 
+init_app("web")
+logger = logging.getLogger(__name__)
 
 # --- 起動時に1回だけ Service を作って使い回す ---
 @st.cache_resource
