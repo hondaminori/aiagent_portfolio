@@ -32,7 +32,8 @@ def chunk_documents(documents: list[Document]) -> list[Document]:
 
     chunked_docs = recursive_splitter.split_documents(documents)
 
-    for chunked_doc in chunked_docs:
-        logger.debug(chunked_doc)
+    if logger.isEnabledFor(logging.DEBUG):
+        for chunked_doc in chunked_docs:
+            logger.debug(chunked_doc)
 
     return chunked_docs

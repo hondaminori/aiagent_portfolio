@@ -2,11 +2,12 @@ from typing import Any, Iterable
 from langchain_core.documents import Document
 from common.logging_config import logging
 from common.logging_config import log_start_end
+from common.config import SEARCH_KWARGS, SEARCH_TYPE
 
 logger = logging.getLogger(__name__)
 
 @log_start_end
-def create_retriever(vectordb: any, search_type: str = "similarity", k: int = 3) -> Any:
+def create_retriever(vectordb: any) -> Any:
     """VectorStore から Retriever を作成する
     Args:
         vectordb: VectorStore のインスタンス
@@ -19,8 +20,8 @@ def create_retriever(vectordb: any, search_type: str = "similarity", k: int = 3)
     今は無理に固定しないことにした。
     """
     return vectordb.as_retriever(
-        search_type=search_type,
-        search_kwargs={"k": k}
+        search_type=SEARCH_TYPE,
+        search_kwargs={"k": SEARCH_KWARGS}
     )
 
 @log_start_end

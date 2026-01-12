@@ -3,9 +3,9 @@ from __future__ import annotations
 import logging
 import os
 from logging.handlers import TimedRotatingFileHandler
-from pathlib import Path
 
 from common.paths import LOG_DIR
+from common.config import LOG_LEVEL, LOG_DEST
 
 import functools
 
@@ -18,55 +18,6 @@ class DefaultFieldsFilter(logging.Filter):
             record.target_func = "-"
         return True
 
-# def _create_log_handler(app_name: str) -> logging.Handler:
-#     """
-#     出力先に応じた Handler を生成
-#     """
-#     log_dest = os.getenv("LOG_DEST", "stdout")
-#     log_level = os.getenv("LOG_LEVEL", "INFO").upper()
-
-#     formatter = SafeFormatter(
-#         fmt="%(asctime)s | %(levelname)s | %(name)s | %(target_func)s | %(message)s",
-#         datefmt="%Y-%m-%d %H:%M:%S",
-#     )
-
-#     if log_dest == "file":
-#         app_name = os.getenv("APP_NAME", "unknown").strip()
-
-#         log_path = LOG_DIR / app_name
-#         log_path.mkdir(parents=True, exist_ok=True)
-
-#         handler = TimedRotatingFileHandler(
-#             filename=log_path / f"{app_name}.log",
-#             when="midnight",
-#             backupCount=14,
-#             encoding="utf-8",
-#         )
-#     else:
-#         handler = logging.StreamHandler()
-
-#     handler.setLevel(log_level)
-#     handler.setFormatter(formatter)
-#     return handler
-
-# def get_logger(name: str) -> logging.Logger:
-#     """
-#     共通 logger 取得関数
-#     """
-#     logger = logging.getLogger(name)
-
-#     if logger.handlers:
-#         return logger  # 二重登録防止
-
-#     log_level = os.getenv("LOG_LEVEL", "INFO").upper()
-#     logger.setLevel(log_level)
-
-#     handler = _create_log_handler()
-#     logger.addHandler(handler)
-
-#     logger.propagate = False
-#     return logger
-
 def setup_logging() -> None:
     """
     プロセス全体（root logger）の logging 設定を初期化する。
@@ -74,8 +25,10 @@ def setup_logging() -> None:
     - handler は1つだけ
     - 起動点（bootstrap）で必ず最初に呼ぶこと
     """
-    log_level = os.getenv("LOG_LEVEL", "INFO").upper()
-    log_dest = os.getenv("LOG_DEST", "stdout").strip().lower()
+    # log_level = os.getenv("LOG_LEVEL", "INFO").upper()
+    log_level = LOG_LEVEL.upper()
+    # log_dest = os.getenv("LOG_DEST", "stdout").strip().lower()
+    log_dest = LOG_DEST.strip().lower()
     app_name = os.getenv("APP_NAME", "unknown").strip()
 
     root = logging.getLogger()

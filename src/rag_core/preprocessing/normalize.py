@@ -1,6 +1,7 @@
 from langchain_core.documents import Document
 from common.logging_config import logging
 from common.logging_config import log_start_end
+from common.config import SKIP_LEADING_PAGES
 import re
 
 logger = logging.getLogger(__name__)
@@ -47,10 +48,11 @@ def filter_documents(documents: list[Document]) -> list[Document]:
 
     # 内包表記はあえて使っていない
     for doc in documents:
-        if doc.page_content and doc.page_content.strip() != "":
+        if doc.page_content and doc.page_content.strip() != "" and SKIP_LEADING_PAGES < int(doc.metadata.get("page", 0)):
             filtered_documents.append(doc)
 
     logger.info(f"filter_documents: {len(documents)} 件のうち {len(filtered_documents)} 件を有効と判断しました。")
+    logger.warning(f"{len(documents) - len(filtered_documents)} 件が除外されています。確認してください。")
 
     return filtered_documents
 
@@ -70,12 +72,10 @@ def clean_documents(documents: list[Document]) -> list[Document]:
 
     for doc in documents:
 
-        logger.debug(f"clean前のpage_content: {doc.page_content}")
-
         page_content = doc.page_content.replace('\r\n', '\n').replace('\r', '\n')
         page_content = re.sub(r'(\n[ \t]*){3,}', '\n\n', page_content)
+
         # 単なるmetadata=doc.metadataでは参照渡しになるため、copy()でコピーを作成してから渡す
         cleaned_documents.append(Document(page_content=page_content, metadata=doc.metadata.copy()))
 
-        logger.debug(f"clean後のpage_content: {page_content}")
     return cleaned_documents

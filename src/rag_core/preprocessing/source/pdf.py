@@ -10,17 +10,15 @@ def load_documents():
     """
     PDFファイルからドキュメントを読み込む
     """
-    # logger.info("load_documents() を開始します")
-
     if not DOC_DIR.exists():
-        logger.error(f"ドキュメント格納ディレクトリが存在しません: {DOC_DIR}")
-        raise FileNotFoundError(f"ドキュメント格納ディレクトリが存在しません: {DOC_DIR}")
+        logger.error(f"ドキュメント格納ディレクトリ {DOC_DIR} が存在しません")
+        raise FileNotFoundError(f"ドキュメント格納ディレクトリ {DOC_DIR} が存在しません")
     
     pdf_paths = sorted(DOC_DIR.glob("*.pdf"))
 
     if not pdf_paths:
-        logger.warning(f"DOC_DIR にPDFファイルが見つかりません: {DOC_DIR}")
-        raise FileNotFoundError(f"DOC_DIR にPDFファイルが見つかりません: {DOC_DIR}")
+        logger.warning(f"{DOC_DIR} にPDFファイルが見つかりません")
+        raise FileNotFoundError(f"{DOC_DIR} にPDFファイルが見つかりません")
 
     documents = []
 
@@ -34,9 +32,9 @@ def load_documents():
 
     logger.info(f"{len(pdf_paths)} 本のPDFファイルから {len(documents)} 件のドキュメントを読み込みました。")
 
-    for doc in documents:
-        _pagecontent_preview = doc.page_content.replace(chr(10), ' ')[:100]
-        logger.debug(f"ドキュメント内容の一部: {_pagecontent_preview}...")
+    if logger.isEnabledFor(logging.DEBUG):
+        for doc in documents:
+            _pagecontent_preview = doc.page_content.replace(chr(10), ' ')[:100]
+            logger.debug(f"PDFから取得した内容: {_pagecontent_preview}...")
 
-    # logger.info("load_documents() を終了します")
     return documents

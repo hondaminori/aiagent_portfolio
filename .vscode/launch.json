@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Ingest (RAG)",
+      "type": "python",
+      "request": "launch",
+
+      "program": "${workspaceFolder}/src/script/ingest.py",
+
+      "env": {
+        "PYTHONPATH": "src"
+      },
+
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}

@@ -1,31 +1,26 @@
-from __future__ import annotations
-
-import logging
-import os
-
 from common.bootstrap import init_app
+from common.logging_config import log_start_end
 from rag_core.query.service import create_service_from_env
-from common.config import SEARCH_KWARGS, SEARCH_TYPE
+import logging
 
 init_app("ragtest")
 
 logger = logging.getLogger(__name__)
 
+@log_start_end
 def main() -> None:
-    service = create_service_from_env(
-        api_key=os.getenv("OPENAI_API_KEY"),
-        embedding_model_name=os.getenv("EMBEDDING_MODEL_NAME"),
-        chat_model_name=os.getenv("CHAT_MODEL_NAME"),
-        collection_name="WorkRules",
-        k=SEARCH_KWARGS,
-        search_type=SEARCH_TYPE
-    )
+    service = create_service_from_env()
 
     q = "時短について教えてください。"
     logger.info(f"query: {q}")
-    ans = service.ask(q)
+    response = service.ask(q)
     logger.info("質問に返答しました")
-    logger.info(f"回答: {ans}")
+    logger.info(f"回答: {response["answer"]}")
+
+    if logger.isEnabledFor(logging.DEBUG):
+        for source_document in response["source_documents"]:
+            content = source_document.page_content.replace('\r\n', ' ').replace('\n', ' ')
+            logger.debug(f"判断根拠や参照箇所: {content}" )
 
 if __name__ == "__main__":
     try:
@@ -33,21 +28,3 @@ if __name__ == "__main__":
     except Exception:
         logger.exception("ragtestが失敗しました")
         raise
-
-
-# setup_logging("rag_app")
-
-# logger.info("アプリを起動しました")
-
-# service = create_service_from_env(
-#     api_key=os.getenv("OPENAI_API_KEY"),
-#     embedding_model_name=os.getenv("EMBEDDING_MODEL_NAME"),
-#     chat_model_name=os.getenv("CHAT_MODEL_NAME"),
-#     collection_name="WorkRules",
-#     k=SEARCH_KWARGS,
-#     search_type=SEARCH_TYPE
-# )
-
-# print(service.ask("介護休暇について教えて"))
-
-# logger.info("アプリを終了しました")

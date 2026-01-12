@@ -3,8 +3,9 @@ import time
 import functools
 from contextlib import contextmanager
 from typing import Callable, Any
+import logging
 
-from common.logging_config import get_logger
+logger = logging.getLogger(__name__)
 
 @contextmanager
 def measure_time(
@@ -18,7 +19,6 @@ def measure_time(
         with measure_time("vector_search"):
             do_search()
     """
-    logger = get_logger(logger_name)
     start = time.perf_counter()
 
     try:
@@ -45,7 +45,6 @@ def measure_time_decorator(
     """
 
     def decorator(func: Callable) -> Callable:
-        logger = get_logger(logger_name)
 
         @functools.wraps(func)
         def wrapper(*args, **kwargs) -> Any:

@@ -1,5 +1,4 @@
 from pathlib import Path
-import os
 
 def find_project_root(start: Path) -> Path:
     current = start.resolve()

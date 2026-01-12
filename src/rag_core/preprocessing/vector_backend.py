@@ -10,15 +10,16 @@ from langchain_openai import OpenAIEmbeddings
 from typing import List 
 from common.logging_config import logging
 from common.logging_config import log_start_end
+from common.paths import CHROMA_PERSIST_DIR
+from common.config import COLLECTION_NAME
 
 logger = logging.getLogger(__name__)
 
 @log_start_end
 def build_vectorstore(
     documents: List[Document],
-    embedding: OpenAIEmbeddings,
-    collection_name: str
-):
+    embedding: OpenAIEmbeddings
+    ):
     """
     VectorStore（LangChain）のインスタンスを生成する。
 
@@ -34,8 +35,8 @@ def build_vectorstore(
     vectordb = Chroma.from_documents(
         documents=documents,
         embedding=embedding,
-        collection_name=collection_name,
-        persist_directory='/tmp/chroma'
+        collection_name=COLLECTION_NAME,
+        persist_directory=CHROMA_PERSIST_DIR
     )
 
     return vectordb
@@ -57,7 +58,7 @@ def load_vectorstore(
     vectordb = Chroma(
         collection_name=collection_name,
         embedding_function=embedding,
-        persist_directory='/tmp/chroma'
+        persist_directory=CHROMA_PERSIST_DIR
     )
 
     return vectordb
