@@ -32,27 +32,20 @@ def get_service():
     Raises:
         RuntimeError: 必須の環境変数が設定されていない場合。
     """
-    load_dotenv(ENV_PATH)
+    # load_dotenv(ENV_PATH)
 
     api_key = os.getenv("OPENAI_API_KEY")
-    embedding_model_name = os.getenv("EMBEDDING_MODEL_NAME")
-    chat_model_name = os.getenv("CHAT_MODEL_NAME")
+    # embedding_model_name = os.getenv("EMBEDDING_MODEL_NAME")
+    # chat_model_name = os.getenv("CHAT_MODEL_NAME")
 
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY が見つかりません (.env を確認してください)")
-    if not embedding_model_name:
-        raise RuntimeError("EMBEDDING_MODEL_NAME が見つかりません (.env を確認してください)")
-    if not chat_model_name:
-        raise RuntimeError("CHAT_MODEL_NAME が見つかりません (.env を確認してください)")
+    # if not api_key:
+    #     raise RuntimeError("OPENAI_API_KEY が見つかりません (.env を確認してください)")
+    # if not embedding_model_name:
+    #     raise RuntimeError("EMBEDDING_MODEL_NAME が見つかりません (.env を確認してください)")
+    # if not chat_model_name:
+    #     raise RuntimeError("CHAT_MODEL_NAME が見つかりません (.env を確認してください)")
 
-    return create_service_from_env(
-        api_key=api_key,
-        embedding_model_name=embedding_model_name,
-        chat_model_name=chat_model_name,
-        collection_name=os.getenv("COLLECTION_NAME", "WorkRules"),
-        k=int(os.getenv("TOP_K", "3")),
-        search_type=os.getenv("SEARCH_TYPE", "similarity"),
-    )
+    return create_service_from_env()
 
 
 def main():

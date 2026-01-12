@@ -1,4 +1,3 @@
-# common/telemetry.py
 import time
 import functools
 from contextlib import contextmanager
@@ -8,10 +7,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 @contextmanager
-def measure_time(
-    label: str,
-    logger_name: str = "telemetry",
-):
+def measure_time(label: str):
     """
     処理時間を計測する context manager
 
@@ -30,11 +26,7 @@ def measure_time(
         logger.exception(f"{label} failed | elapsed_ms={elapsed:.2f}")
         raise
 
-
-def measure_time_decorator(
-    label: str,
-    logger_name: str = "telemetry",
-) -> Callable:
+def measure_time_decorator(label: str) -> Callable:
     """
     処理時間を計測する decorator
 
@@ -43,7 +35,6 @@ def measure_time_decorator(
         def ask(...):
             ...
     """
-
     def decorator(func: Callable) -> Callable:
 
         @functools.wraps(func)

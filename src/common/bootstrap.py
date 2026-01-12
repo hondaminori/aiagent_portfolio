@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import os
 from dotenv import load_dotenv
 
@@ -23,5 +21,8 @@ def init_app(app_name: str) -> None:
 
     if not CHAT_MODEL_NAME:
         raise ValueError("定数 CHAT_MODEL_NAME が設定されていません")
+
+    if not os.getenv("OPENAI_API_KEY"):
+        raise ValueError("定数 OPENAI_API_KEY (.env) が設定されていません")
 
     setup_logging()
