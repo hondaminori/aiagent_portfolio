@@ -288,3 +288,325 @@
 2026-01-12 06:25:09 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Mon, 12 Jan 2026 06:25:07 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-8h9z34f8lpywhopvlvfbenye'), ('openai-processing-ms', '10572'), ('openai-project', 'proj_Il1h3X7vESPR7KXprIiKIv6d'), ('openai-version', '2020-10-01'), ('x-envoy-upstream-service-time', '10803'), ('x-ratelimit-limit-requests', '500'), ('x-ratelimit-limit-tokens', '500000'), ('x-ratelimit-remaining-requests', '499'), ('x-ratelimit-remaining-tokens', '498080'), ('x-ratelimit-reset-requests', '120ms'), ('x-ratelimit-reset-tokens', '230ms'), ('x-request-id', 'req_cecdde7194154ada815f787e2cda75f0'), ('x-openai-proxy-wasm', 'v0.1'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=EDadkgA1aFOovQqWFr4ZOK3ujD4jU01WdzKKCujBOPk-1768199107-1.0.1.1-E7ekBkF8VQipEnSppCHfjl1Hl.o_4iK7OlccQZZxdn2DWwznSxvJQW5kDpjABL4m.5vt4RFTpCfXcRaSVkQCk_FgEWhA2mcVULklOCYm6fE; path=/; expires=Mon, 12-Jan-26 06:55:07 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=PfIkJ1UKtmeWi0HfAwPCJB2acEVy70K7.v0FMYlQS9c-1768199107888-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9bca92e15c7ccffb-KIX'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
 2026-01-12 06:25:09 | DEBUG | openai._base_client | request | request_id: req_cecdde7194154ada815f787e2cda75f0
 2026-01-12 06:25:09 | INFO | common.telemetry | wrapper | 関数askの実行時間 completed | elapsed_ms=13314.64 | function=ask
+2026-01-12 06:29:39 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 06:29:39 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 06:29:39 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 06:29:39 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 06:29:39 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 06:29:39 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 06:29:39 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 06:29:39 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 06:29:39 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:29:39 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:29:39 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:29:39 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:29:39 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 06:29:39 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 06:29:40 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 06:29:40 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 06:33:36 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 06:33:36 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 06:33:36 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 06:33:36 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 06:33:37 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 06:33:37 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 06:33:37 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 06:33:37 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 06:33:37 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:33:37 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:33:37 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:33:37 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:33:37 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 06:33:37 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 06:33:37 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 06:33:38 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 06:34:23 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 06:34:23 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 06:34:23 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 06:34:23 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 06:34:23 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 06:34:23 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 06:34:24 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 06:34:24 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 06:34:24 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:34:24 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:34:24 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:34:24 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:34:24 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 06:34:24 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 06:34:24 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 06:34:25 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 06:44:22 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'idempotency_key': 'stainless-python-retry-622d8c1e-91bc-4c4d-b455-6fcd65281521', 'post_parser': <function Embeddings.create.<locals>.parser at 0x7fee75dedb20>, 'json_data': {'input': [[39177, 163, 253, 255, 20230, 59739, 16995, 38144, 8067, 247, 58942, 38144]], 'model': 'text-embedding-3-small', 'encoding_format': 'base64'}}
+2026-01-12 06:44:22 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2026-01-12 06:44:22 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2026-01-12 06:44:22 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fee75dcf830>
+2026-01-12 06:44:22 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7fee7643aed0> server_hostname='api.openai.com' timeout=None
+2026-01-12 06:44:22 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fee75dcf5c0>
+2026-01-12 06:44:22 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
+2026-01-12 06:44:22 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
+2026-01-12 06:44:22 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
+2026-01-12 06:44:22 | DEBUG | httpcore.http11 | trace | send_request_body.complete
+2026-01-12 06:44:22 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
+2026-01-12 06:44:22 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 12 Jan 2026 06:44:21 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-3-small'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'87'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-8445bfbf54-8dskx'), (b'x-envoy-upstream-service-time', b'398'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999988'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'req_04c440e921de4154ad701285a0e289ad'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=_QYGowo_XaR4tCgOHntem5Ap8Nn9VN52.y5Kf70UIWA-1768200261-1.0.1.1-7nCXl21Wn9oB9etYSe0N.MvSVXy3Yni2uRlMzOVHtFD4uIdxQL_Vj_vTKmjyvEnrxzx5A9L4IEIJEwq.TwItaRU_eNoiQO7PB0J6pZNzDic; path=/; expires=Mon, 12-Jan-26 07:14:21 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=bv1IfxeTwpHnIrXtMglqEUysiHsqZNiqQzFO5RVwqdw-1768200261151-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9bcaaf4cdc8e833b-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-01-12 06:44:22 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-12 06:44:22 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
+2026-01-12 06:44:22 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
+2026-01-12 06:44:22 | DEBUG | httpcore.http11 | trace | response_closed.started
+2026-01-12 06:44:22 | DEBUG | httpcore.http11 | trace | response_closed.complete
+2026-01-12 06:44:22 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers([('date', 'Mon, 12 Jan 2026 06:44:21 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-allow-origin', '*'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-model', 'text-embedding-3-small'), ('openai-organization', 'user-8h9z34f8lpywhopvlvfbenye'), ('openai-processing-ms', '87'), ('openai-project', 'proj_Il1h3X7vESPR7KXprIiKIv6d'), ('openai-version', '2020-10-01'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('via', 'envoy-router-8445bfbf54-8dskx'), ('x-envoy-upstream-service-time', '398'), ('x-ratelimit-limit-requests', '3000'), ('x-ratelimit-limit-tokens', '1000000'), ('x-ratelimit-remaining-requests', '2999'), ('x-ratelimit-remaining-tokens', '999988'), ('x-ratelimit-reset-requests', '20ms'), ('x-ratelimit-reset-tokens', '0s'), ('x-request-id', 'req_04c440e921de4154ad701285a0e289ad'), ('x-openai-proxy-wasm', 'v0.1'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=_QYGowo_XaR4tCgOHntem5Ap8Nn9VN52.y5Kf70UIWA-1768200261-1.0.1.1-7nCXl21Wn9oB9etYSe0N.MvSVXy3Yni2uRlMzOVHtFD4uIdxQL_Vj_vTKmjyvEnrxzx5A9L4IEIJEwq.TwItaRU_eNoiQO7PB0J6pZNzDic; path=/; expires=Mon, 12-Jan-26 07:14:21 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=bv1IfxeTwpHnIrXtMglqEUysiHsqZNiqQzFO5RVwqdw-1768200261151-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9bcaaf4cdc8e833b-KIX'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2026-01-12 06:44:22 | DEBUG | openai._base_client | request | request_id: req_04c440e921de4154ad701285a0e289ad
+2026-01-12 06:44:22 | DEBUG | urllib3.connectionpool | _get_conn | Resetting dropped connection: us.i.posthog.com
+2026-01-12 06:44:23 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 06:44:23 | DEBUG | root | format_retrieved_docs | (3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮
+を開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし
+て、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担
+当者に申し出なければならない。 
+  
+（介護短時間勤務） 
+第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ
+り、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午
+前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 
+(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は
+拒むことができる。 
+ 1  日雇従業員 
+ 2  労使協定によって除外された次の従業員 
+ · 入社１年未満の従業員 
+ · １週間の所定労働日数が２日以下の従業員
+
+(3) 介護のための短時間勤務をしようとする者は、 利用開始の日から３年の間で２回
+までの範囲内で、短縮を開始しようとする日及び短縮を終了しようとする日を明ら
+かにして、原則として、短縮を開始しようとする日の２週間前までに、短時間勤務
+申出書により人事担当者に申し出なければならない。 
+  
+（給与等の取扱い） 
+第 10 条 基本給その他の月毎に支払われる給与の取扱いは次のとおりとする。 
+ 1  育児・介護休業をした期間については、支給しない 
+ 2  第３条及び第４条の制度の適用を受けた日又は時間については、無給とする 
+ 3  第７条、第８条及び第９条の制度の適用を受けた期間については、別途定める
+賃金規定に基づく労務提供のなかった時間分に相当する額を控除した基本給と
+諸手当の全額を支給する。 
+(2) 定期昇給は、育児・介護休業の期間中は行わないものとし、育児・介護休業期間中
+に定期昇給日が到来した者については、復職後に昇給させるものとする。第３条か
+ら第９条の制度の適用を受けた日又は期間については、通常の勤務をしているもの
+とみなす。 
+(3) 賞与については、その算定対象期間に育児・介護休業をした期間が含まれる場合に
+は、出勤日数により日割りで計算した額を支給する。また、その算定対象期間に第
+８条及び第９条の適用を受ける期間がある場合においては、短縮した時間に対応す
+る賞与は、支給しない。第３条から第７条の制度の適用を受けた日又は期間につい
+ては、通常の勤務をしているものとみなす。 
+(4) 退職金の算定に当たっては、育児・介護休業をした期間は勤務したものとして勤続
+年数を計算するものとする。また、第３条から第９条の制度の適用を受けた日又は
+期間は、通常の勤務をしているものとみなす。 
+(5) 年次有給休暇の権利発生のための出勤率の算定に当たっては、育児・介護休業をし
+た日並びに子の看護休暇及び介護休暇を取得した日は出勤したものとみなす。 
+  
+（育児休業等に関するハラスメントの防止） 
+第 11 条 すべての従業員は第１条から第９条の制度の申出・利用に関して、当該申出・利用
+する従業員の就業環境を害する言動を行ってはならない。 
+(2) 前項の言動を行ったと認められる従業員に対しては、就業規則に基づき、厳正に対
+処する。 
+  
+（法令との関係）
+
+(4) 制限開始予定日までに、申出に係る子又は家族の死亡等により申出者が子を養育又
+は家族を介護しないことになった場合には、申出されなかったものとみなす。この
+場合において、申出者は、原則として当該事由が発生した日に、人事担当者にその
+旨を通知しなければならない。 
+(5) 次の各号に掲げるいずれかの事由が生じた場合には、制限期間は終了するものと
+し、当該制限期間の終了日は当該各号に掲げる日とする。 
+ 1 子又は家族の死亡等制限に係る子を養育又は家族を介護しないこととなった場
+合 
+当該事由が発生した日 
+ 2 制限に係る子が小学校の就学の始期に達した場合 
+子が６歳に達する日の属する年度の３月 31 日 
+ 3 申出者について、産前産後休業、育児休業又は介護休業が始まった場合 
+産前産後休業、育児休業又は介護休業の開始日の前日 
+(6) 前項①の事由が生じた場合には、申出者は原則として当該事由が生じた日に、人事
+担当者にその旨を通知しなければならない。 
+  
+（育児短時間勤務） 
+第８条 ３歳に満たない子を養育する従業員は、申し出ることにより、就業規則の所定労働
+時間について、以下のように変更することができる。  
+所定労働時間を午前９時から午後４時まで(うち休憩時間は、午前 12 時から午後１
+時までの１時間とする。)の６時間とする(１歳に満たない子を育てる女性従業員は
+更に別途 30 分ずつ２回の育児時間を請求することができる。)。 
+(2) 前項にかかわらず、次のいずれかに該当する従業員からの育児短時間勤務の申出は
+拒むことができる。 
+ 1  日雇従業員 
+ 2  １日の所定労働時間が６時間以下である従業員 
+ 3  労使協定によって除外された次の従業員 
+ · 入社１年未満の従業員 
+ · １週間の所定労働日数が２日以下の従業員 
+(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮
+を開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし
+て、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担
+当者に申し出なければならない。 
+  
+（介護短時間勤務） 
+第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ
+2026-01-12 06:44:23 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 06:44:23 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Raw-Response': 'true'}, 'files': None, 'idempotency_key': 'stainless-python-retry-91de673f-9e08-4cce-9efc-7836d80a282a', 'json_data': {'messages': [{'content': 'あなたは社内文書を参照して質問に回答するAIアシスタントです。\n\n    以下のルールを厳守してください。\n    - 回答は提供されたコンテキストに基づいて行うこと\n    - コンテキストに記載がない内容は、推測をすること\n    - 例えば育休、育児休暇、育児休業、といった類義語も含めて対応すること\n    - もし類義語や関連する用語があれば、それらも考慮して回答すること\n      そしてそのような回答をするときは「（類義語や関連用語）も含めて」と明示すること\n    - 回答は日本語で、簡潔かつ分かりやすく記述すること\n    - 不明な場合は、以下のように回答すること。\n    「就業規則に該当する記載がありません。恐れ入りますが質問を見直すか、人事にお問い合わせください。」\n    「判断できなかった理由は以下の通りです：（理由を具体的に記載）」', 'role': 'system'}, {'content': '【コンテキスト】\n(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮\nを開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし\nて、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担\n当者に申し出なければならない。 \n  \n（介護短時間勤務） \n第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ\nり、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午\n前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 \n(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は\n拒むことができる。 \n 1  日雇従業員 \n 2  労使協定によって除外された次の従業員 \n · 入社１年未満の従業員 \n · １週間の所定労働日数が２日以下の従業員\n\n(3) 介護のための短時間勤務をしようとする者は、 利用開始の日から３年の間で２回\nまでの範囲内で、短縮を開始しようとする日及び短縮を終了しようとする日を明ら\nかにして、原則として、短縮を開始しようとする日の２週間前までに、短時間勤務\n申出書により人事担当者に申し出なければならない。 \n  \n（給与等の取扱い） \n第 10 条 基本給その他の月毎に支払われる給与の取扱いは次のとおりとする。 \n 1  育児・介護休業をした期間については、支給しない \n 2  第３条及び第４条の制度の適用を受けた日又は時間については、無給とする \n 3  第７条、第８条及び第９条の制度の適用を受けた期間については、別途定める\n賃金規定に基づく労務提供のなかった時間分に相当する額を控除した基本給と\n諸手当の全額を支給する。 \n(2) 定期昇給は、育児・介護休業の期間中は行わないものとし、育児・介護休業期間中\nに定期昇給日が到来した者については、復職後に昇給させるものとする。第３条か\nら第９条の制度の適用を受けた日又は期間については、通常の勤務をしているもの\nとみなす。 \n(3) 賞与については、その算定対象期間に育児・介護休業をした期間が含まれる場合に\nは、出勤日数により日割りで計算した額を支給する。また、その算定対象期間に第\n８条及び第９条の適用を受ける期間がある場合においては、短縮した時間に対応す\nる賞与は、支給しない。第３条から第７条の制度の適用を受けた日又は期間につい\nては、通常の勤務をしているものとみなす。 \n(4) 退職金の算定に当たっては、育児・介護休業をした期間は勤務したものとして勤続\n年数を計算するものとする。また、第３条から第９条の制度の適用を受けた日又は\n期間は、通常の勤務をしているものとみなす。 \n(5) 年次有給休暇の権利発生のための出勤率の算定に当たっては、育児・介護休業をし\nた日並びに子の看護休暇及び介護休暇を取得した日は出勤したものとみなす。 \n  \n（育児休業等に関するハラスメントの防止） \n第 11 条 すべての従業員は第１条から第９条の制度の申出・利用に関して、当該申出・利用\nする従業員の就業環境を害する言動を行ってはならない。 \n(2) 前項の言動を行ったと認められる従業員に対しては、就業規則に基づき、厳正に対\n処する。 \n  \n（法令との関係）\n\n(4) 制限開始予定日までに、申出に係る子又は家族の死亡等により申出者が子を養育又\nは家族を介護しないことになった場合には、申出されなかったものとみなす。この\n場合において、申出者は、原則として当該事由が発生した日に、人事担当者にその\n旨を通知しなければならない。 \n(5) 次の各号に掲げるいずれかの事由が生じた場合には、制限期間は終了するものと\nし、当該制限期間の終了日は当該各号に掲げる日とする。 \n 1 子又は家族の死亡等制限に係る子を養育又は家族を介護しないこととなった場\n合 \n当該事由が発生した日 \n 2 制限に係る子が小学校の就学の始期に達した場合 \n子が６歳に達する日の属する年度の３月 31 日 \n 3 申出者について、産前産後休業、育児休業又は介護休業が始まった場合 \n産前産後休業、育児休業又は介護休業の開始日の前日 \n(6) 前項①の事由が生じた場合には、申出者は原則として当該事由が生じた日に、人事\n担当者にその旨を通知しなければならない。 \n  \n（育児短時間勤務） \n第８条 ３歳に満たない子を養育する従業員は、申し出ることにより、就業規則の所定労働\n時間について、以下のように変更することができる。  \n所定労働時間を午前９時から午後４時まで(うち休憩時間は、午前 12 時から午後１\n時までの１時間とする。)の６時間とする(１歳に満たない子を育てる女性従業員は\n更に別途 30 分ずつ２回の育児時間を請求することができる。)。 \n(2) 前項にかかわらず、次のいずれかに該当する従業員からの育児短時間勤務の申出は\n拒むことができる。 \n 1  日雇従業員 \n 2  １日の所定労働時間が６時間以下である従業員 \n 3  労使協定によって除外された次の従業員 \n · 入社１年未満の従業員 \n · １週間の所定労働日数が２日以下の従業員 \n(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮\nを開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし\nて、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担\n当者に申し出なければならない。 \n  \n（介護短時間勤務） \n第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ\n\n【質問】\n時短について教えて', 'role': 'user'}], 'model': 'gpt-5.1', 'stream': False}}
+2026-01-12 06:44:23 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-01-12 06:44:23 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2026-01-12 06:44:23 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fee4ee7a3f0>
+2026-01-12 06:44:23 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7fee75f5de50> server_hostname='api.openai.com' timeout=None
+2026-01-12 06:44:23 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7fee4ee7a150>
+2026-01-12 06:44:23 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
+2026-01-12 06:44:23 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
+2026-01-12 06:44:23 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
+2026-01-12 06:44:23 | DEBUG | httpcore.http11 | trace | send_request_body.complete
+2026-01-12 06:44:23 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
+2026-01-12 06:44:23 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 06:44:33 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 12 Jan 2026 06:44:31 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'9232'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'x-envoy-upstream-service-time', b'9472'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'498084'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'229ms'), (b'x-request-id', b'req_0a84cd55e7ff409288488e53981145c6'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=8lI6m0L9gr9CZcylu7BGexvc4kM4TorobHtD7VBX_ts-1768200271-1.0.1.1-n_mC_gapPg5b0Er1w_7GrGX1jflmq2TOoLxic00JesQvNn6jJ__3m8mRyrEiSWaEKb7I1xdmCYhvl.2al_qeLPGKLbzw.mVWNWbA7raX3M4; path=/; expires=Mon, 12-Jan-26 07:14:31 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=U60fyaSgT4ea.yUzOVsJqCrnbpf5cwbeS1xPh.pmLT8-1768200271511-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9bcaaf52089d1a0d-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-01-12 06:44:33 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 06:44:33 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
+2026-01-12 06:44:33 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
+2026-01-12 06:44:33 | DEBUG | httpcore.http11 | trace | response_closed.started
+2026-01-12 06:44:33 | DEBUG | httpcore.http11 | trace | response_closed.complete
+2026-01-12 06:44:33 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Mon, 12 Jan 2026 06:44:31 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-8h9z34f8lpywhopvlvfbenye'), ('openai-processing-ms', '9232'), ('openai-project', 'proj_Il1h3X7vESPR7KXprIiKIv6d'), ('openai-version', '2020-10-01'), ('x-envoy-upstream-service-time', '9472'), ('x-ratelimit-limit-requests', '500'), ('x-ratelimit-limit-tokens', '500000'), ('x-ratelimit-remaining-requests', '499'), ('x-ratelimit-remaining-tokens', '498084'), ('x-ratelimit-reset-requests', '120ms'), ('x-ratelimit-reset-tokens', '229ms'), ('x-request-id', 'req_0a84cd55e7ff409288488e53981145c6'), ('x-openai-proxy-wasm', 'v0.1'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=8lI6m0L9gr9CZcylu7BGexvc4kM4TorobHtD7VBX_ts-1768200271-1.0.1.1-n_mC_gapPg5b0Er1w_7GrGX1jflmq2TOoLxic00JesQvNn6jJ__3m8mRyrEiSWaEKb7I1xdmCYhvl.2al_qeLPGKLbzw.mVWNWbA7raX3M4; path=/; expires=Mon, 12-Jan-26 07:14:31 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=U60fyaSgT4ea.yUzOVsJqCrnbpf5cwbeS1xPh.pmLT8-1768200271511-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9bcaaf52089d1a0d-KIX'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2026-01-12 06:44:33 | DEBUG | openai._base_client | request | request_id: req_0a84cd55e7ff409288488e53981145c6
+2026-01-12 06:44:33 | INFO | common.telemetry | wrapper | 関数askの実行時間 completed | elapsed_ms=11504.60 | function=ask
+2026-01-12 06:50:54 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 06:50:54 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 06:50:55 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 06:50:55 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 06:50:55 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 06:50:55 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 06:50:55 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 06:50:55 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 06:50:55 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:50:55 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:50:55 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:50:55 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:50:55 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 06:50:55 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 06:50:56 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 06:50:57 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 06:51:12 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 06:51:12 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 06:51:12 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 06:51:12 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 06:51:12 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 06:51:12 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 06:51:13 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 06:51:13 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 06:51:13 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:51:13 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:51:13 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:51:13 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:51:13 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 06:51:13 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 06:51:13 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 06:51:14 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 06:52:10 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 06:52:10 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 06:52:11 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 06:52:11 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 06:52:11 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 06:52:11 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 06:52:11 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 06:52:11 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 06:52:11 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:52:11 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 06:52:11 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:52:11 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 06:52:11 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 06:52:11 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 06:52:11 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 06:52:12 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 07:01:42 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 07:01:42 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 07:01:43 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 07:01:43 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 07:01:43 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 07:01:43 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 07:01:43 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 07:01:43 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 07:01:43 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 07:01:43 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 07:01:43 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 07:01:43 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 07:01:43 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 07:01:43 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 07:01:43 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 07:01:44 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 07:06:35 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 07:06:35 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 07:06:36 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 07:06:36 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 07:06:36 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 07:06:36 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 07:06:36 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 07:06:36 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 07:06:36 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 07:06:36 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 07:06:36 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 07:06:36 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 07:06:36 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 07:06:36 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 07:06:37 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 07:06:37 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 08:01:56 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 08:01:56 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 08:01:57 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 08:01:57 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 08:01:57 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 08:01:57 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 08:01:57 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 08:01:57 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 08:01:57 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 08:01:57 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 08:01:57 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 08:01:57 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 08:01:57 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 08:01:57 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 08:01:57 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 08:01:58 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 08:04:49 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 08:04:49 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 08:04:50 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 08:04:50 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 08:04:50 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 08:04:50 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 08:04:50 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 08:04:50 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 08:04:50 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 08:04:50 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 08:04:50 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 08:04:50 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 08:04:50 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 08:04:50 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 08:04:51 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 08:04:52 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 08:13:21 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 08:13:21 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 08:13:22 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 08:13:22 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 08:13:22 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 08:13:22 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 08:13:22 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 08:13:22 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 08:13:22 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 08:13:22 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 08:13:22 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 08:13:22 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 08:13:22 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 08:13:22 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 08:13:23 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 08:13:23 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 08:13:49 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 08:13:49 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 08:13:50 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 08:13:50 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 08:13:50 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 08:13:50 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 08:13:50 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 08:13:50 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 08:13:50 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 08:13:50 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 08:13:50 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 08:13:50 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 08:13:50 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 08:13:50 | INFO | apps.api.app.main | on_startup | API が起動しました
+2026-01-12 08:13:51 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 08:13:51 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15

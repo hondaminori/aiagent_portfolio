@@ -1,52 +1,17 @@
-import os
-import streamlit as st
-from dotenv import load_dotenv
-
+from common.logging_config import log_start_end
 from rag_core.query.service import create_service_from_env
-from common.paths import ENV_PATH
 from common.bootstrap import init_app
+import streamlit as st
 import logging
 
 init_app("web")
 logger = logging.getLogger(__name__)
 
 # --- 起動時に1回だけ Service を作って使い回す ---
+@log_start_end
 @st.cache_resource
 def get_service():
-    """
-    環境変数を読み込み、サービスを初期化して返します。
-
-    必須の環境変数:
-        - OPENAI_API_KEY: OpenAI APIのキー。
-        - EMBEDDING_MODEL_NAME: 使用する埋め込みモデルの名前。
-        - CHAT_MODEL_NAME: 使用するチャットモデルの名前。
-
-    オプションの環境変数:
-        - COLLECTION_NAME: コレクション名 (デフォルト: "WorkRules")。
-        - TOP_K: 検索結果の上位K件を返す (デフォルト: 3)。
-        - SEARCH_TYPE: 検索タイプ (デフォルト: "similarity")。
-
-    Returns:
-        object: 環境変数に基づいて初期化されたサービスオブジェクト。
-
-    Raises:
-        RuntimeError: 必須の環境変数が設定されていない場合。
-    """
-    # load_dotenv(ENV_PATH)
-
-    api_key = os.getenv("OPENAI_API_KEY")
-    # embedding_model_name = os.getenv("EMBEDDING_MODEL_NAME")
-    # chat_model_name = os.getenv("CHAT_MODEL_NAME")
-
-    # if not api_key:
-    #     raise RuntimeError("OPENAI_API_KEY が見つかりません (.env を確認してください)")
-    # if not embedding_model_name:
-    #     raise RuntimeError("EMBEDDING_MODEL_NAME が見つかりません (.env を確認してください)")
-    # if not chat_model_name:
-    #     raise RuntimeError("CHAT_MODEL_NAME が見つかりません (.env を確認してください)")
-
     return create_service_from_env()
-
 
 def main():
     st.set_page_config(page_title="RAG Chat", page_icon="💬", layout="centered")
@@ -70,14 +35,18 @@ def main():
 
         with st.spinner("回答生成中..."):
             try:
-                answer = service.ask(query.strip())
+                response = service.ask(query.strip())
             except Exception as e:
                 st.error(f"回答生成に失敗しました: {e}")
                 st.stop()
 
         st.subheader("回答")
-        st.write(answer)
+        st.write(response["answer"])
 
+        # --- 運用・分析用の追加表示 ---
+        with st.expander("参照したドキュメント"):
+            for doc in response["source_documents"]:
+                st.info(doc.page_content) # 根拠となるチャンクを表示
 
 if __name__ == "__main__":
     main()

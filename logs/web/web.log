@@ -1,156 +1,308 @@
-2026-01-09 23:54:51 | INFO | rag_core.query.service | wrapper | start
-2026-01-09 23:54:51 | INFO | rag_core.preprocessing.embed | wrapper | start
-2026-01-09 23:54:52 | INFO | rag_core.preprocessing.embed | wrapper | end
-2026-01-09 23:54:52 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
-2026-01-09 23:54:52 | DEBUG | chromadb.config | start | Starting component System
-2026-01-09 23:54:52 | DEBUG | chromadb.config | start | Starting component Posthog
-2026-01-09 23:54:52 | INFO | rag_core.query.retrieve | wrapper | start
-2026-01-09 23:54:52 | INFO | rag_core.query.retrieve | wrapper | end
-2026-01-09 23:54:52 | INFO | rag_core.query.generate | wrapper | start
-2026-01-09 23:54:52 | INFO | rag_core.query.generate | wrapper | end
-2026-01-09 23:54:53 | INFO | rag_core.query.service | wrapper | end
-2026-01-09 23:54:53 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
-2026-01-09 23:54:54 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
-2026-01-09 23:55:06 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'idempotency_key': 'stainless-python-retry-a1d25dd5-2134-446a-abda-f16c4bc45b8c', 'post_parser': <function Embeddings.create.<locals>.parser at 0x7f8f944c7880>, 'json_data': {'input': [[39177, 163, 253, 255, 20230, 59739, 16995, 38144, 8067, 247, 58942, 38144, 72315, 1811]], 'model': 'text-embedding-3-small', 'encoding_format': 'base64'}}
-2026-01-09 23:55:06 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/embeddings
-2026-01-09 23:55:06 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
-2026-01-09 23:55:06 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8f6d5255b0>
-2026-01-09 23:55:06 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7f8f6da80850> server_hostname='api.openai.com' timeout=None
-2026-01-09 23:55:06 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8f6d524f80>
-2026-01-09 23:55:06 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
-2026-01-09 23:55:06 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
-2026-01-09 23:55:06 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
-2026-01-09 23:55:06 | DEBUG | httpcore.http11 | trace | send_request_body.complete
-2026-01-09 23:55:06 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
-2026-01-09 23:55:08 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 09 Jan 2026 23:55:07 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-3-small'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'121'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-d58d8c96d-k6dpj'), (b'x-envoy-upstream-service-time', b'310'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999986'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'req_31c19cd7cd114022a41243154ccb1ba3'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=MNWSe59fqbaZQ_fh342ncuLaUJy7rVGdsAPlUC6WDhU-1768002907-1.0.1.1-et9PjT5UBO0uOnBGnQGqEOi3m2D6O0Sn47pdJjuKjpvYMAf4zxHDL90I_Uy7m_RL6lRidPRG.2ddrSdw9YiAHclKeF2v4hkVB8xJE9tAaEI; path=/; expires=Sat, 10-Jan-26 00:25:07 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=TcTaCmjYcBErYl5TwS4vImC2B2pmGeIGQc5kcK.yt0k-1768002907335-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9bb7dd140be1fca1-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
-2026-01-09 23:55:08 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-2026-01-09 23:55:08 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
-2026-01-09 23:55:08 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
-2026-01-09 23:55:08 | DEBUG | httpcore.http11 | trace | response_closed.started
-2026-01-09 23:55:08 | DEBUG | httpcore.http11 | trace | response_closed.complete
-2026-01-09 23:55:08 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers([('date', 'Fri, 09 Jan 2026 23:55:07 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-allow-origin', '*'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-model', 'text-embedding-3-small'), ('openai-organization', 'user-8h9z34f8lpywhopvlvfbenye'), ('openai-processing-ms', '121'), ('openai-project', 'proj_Il1h3X7vESPR7KXprIiKIv6d'), ('openai-version', '2020-10-01'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('via', 'envoy-router-d58d8c96d-k6dpj'), ('x-envoy-upstream-service-time', '310'), ('x-ratelimit-limit-requests', '3000'), ('x-ratelimit-limit-tokens', '1000000'), ('x-ratelimit-remaining-requests', '2999'), ('x-ratelimit-remaining-tokens', '999986'), ('x-ratelimit-reset-requests', '20ms'), ('x-ratelimit-reset-tokens', '0s'), ('x-request-id', 'req_31c19cd7cd114022a41243154ccb1ba3'), ('x-openai-proxy-wasm', 'v0.1'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=MNWSe59fqbaZQ_fh342ncuLaUJy7rVGdsAPlUC6WDhU-1768002907-1.0.1.1-et9PjT5UBO0uOnBGnQGqEOi3m2D6O0Sn47pdJjuKjpvYMAf4zxHDL90I_Uy7m_RL6lRidPRG.2ddrSdw9YiAHclKeF2v4hkVB8xJE9tAaEI; path=/; expires=Sat, 10-Jan-26 00:25:07 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=TcTaCmjYcBErYl5TwS4vImC2B2pmGeIGQc5kcK.yt0k-1768002907335-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9bb7dd140be1fca1-KIX'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
-2026-01-09 23:55:08 | DEBUG | openai._base_client | request | request_id: req_31c19cd7cd114022a41243154ccb1ba3
-2026-01-09 23:55:08 | INFO | rag_core.query.retrieve | wrapper | start
-2026-01-09 23:55:08 | DEBUG | root | format_retrieved_docs | (3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮
-を開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし
-て、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担
-当者に申し出なければならない。 
+2026-01-12 08:22:25 | INFO | __main__ | wrapper | start
+2026-01-12 08:22:25 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 08:22:25 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 08:22:25 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 08:22:25 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 08:22:25 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 08:22:25 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 08:22:25 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 08:22:25 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 08:22:25 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 08:22:25 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 08:22:25 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 08:22:25 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 08:22:25 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 08:22:25 | INFO | __main__ | wrapper | end
+2026-01-12 08:22:26 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 08:22:27 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 08:22:40 | INFO | __main__ | wrapper | start
+2026-01-12 08:22:40 | INFO | __main__ | wrapper | end
+2026-01-12 08:22:40 | INFO | __main__ | wrapper | start
+2026-01-12 08:22:40 | INFO | __main__ | wrapper | end
+2026-01-12 08:22:41 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'idempotency_key': 'stainless-python-retry-3c0dce30-613c-4343-82e3-4cd51afaa816', 'post_parser': <function Embeddings.create.<locals>.parser at 0x7ff27011d940>, 'json_data': {'input': [[57942, 110, 6708, 238, 17885, 239, 61964, 255, 20230, 59739, 16995, 38144, 8067, 247, 58942, 38144, 72315]], 'model': 'text-embedding-3-small', 'encoding_format': 'base64'}}
+2026-01-12 08:22:41 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2026-01-12 08:22:41 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2026-01-12 08:22:41 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7ff270e365d0>
+2026-01-12 08:22:41 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7ff271284950> server_hostname='api.openai.com' timeout=None
+2026-01-12 08:22:41 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7ff270e0f320>
+2026-01-12 08:22:41 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
+2026-01-12 08:22:41 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
+2026-01-12 08:22:41 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
+2026-01-12 08:22:41 | DEBUG | httpcore.http11 | trace | send_request_body.complete
+2026-01-12 08:22:41 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
+2026-01-12 08:22:42 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 12 Jan 2026 08:22:40 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-3-small'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'34'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-747dbb5476-clh5v'), (b'x-envoy-upstream-service-time', b'170'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999983'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'1ms'), (b'x-request-id', b'req_552ae3df1fc44fa6a839b43b79434c30'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=w85Jzth4xSLk7ZyDHzRBfGk1ZCLwoskO0GI6EBpQVGo-1768206160-1.0.1.1-T8SGnDdTyCaOE4QOkhsVysy0RUkL5MWdIIagf6Cc_9sOEY8iS5Sm5ANH62ne0Wq0m04oPGuRim6Xb9le3Hr.SKPsVPnNtXzV1YUDOUNzJYE; path=/; expires=Mon, 12-Jan-26 08:52:40 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=E22NflaSLpeilPYx8Q.7p8rXAipyRLSBmfHY6IjO3Ag-1768206160741-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9bcb3f53ff053783-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-01-12 08:22:42 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-12 08:22:42 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
+2026-01-12 08:22:42 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
+2026-01-12 08:22:42 | DEBUG | httpcore.http11 | trace | response_closed.started
+2026-01-12 08:22:42 | DEBUG | httpcore.http11 | trace | response_closed.complete
+2026-01-12 08:22:42 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers([('date', 'Mon, 12 Jan 2026 08:22:40 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-allow-origin', '*'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-model', 'text-embedding-3-small'), ('openai-organization', 'user-8h9z34f8lpywhopvlvfbenye'), ('openai-processing-ms', '34'), ('openai-project', 'proj_Il1h3X7vESPR7KXprIiKIv6d'), ('openai-version', '2020-10-01'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('via', 'envoy-router-747dbb5476-clh5v'), ('x-envoy-upstream-service-time', '170'), ('x-ratelimit-limit-requests', '3000'), ('x-ratelimit-limit-tokens', '1000000'), ('x-ratelimit-remaining-requests', '2999'), ('x-ratelimit-remaining-tokens', '999983'), ('x-ratelimit-reset-requests', '20ms'), ('x-ratelimit-reset-tokens', '1ms'), ('x-request-id', 'req_552ae3df1fc44fa6a839b43b79434c30'), ('x-openai-proxy-wasm', 'v0.1'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=w85Jzth4xSLk7ZyDHzRBfGk1ZCLwoskO0GI6EBpQVGo-1768206160-1.0.1.1-T8SGnDdTyCaOE4QOkhsVysy0RUkL5MWdIIagf6Cc_9sOEY8iS5Sm5ANH62ne0Wq0m04oPGuRim6Xb9le3Hr.SKPsVPnNtXzV1YUDOUNzJYE; path=/; expires=Mon, 12-Jan-26 08:52:40 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=E22NflaSLpeilPYx8Q.7p8rXAipyRLSBmfHY6IjO3Ag-1768206160741-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9bcb3f53ff053783-KIX'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2026-01-12 08:22:42 | DEBUG | openai._base_client | request | request_id: req_552ae3df1fc44fa6a839b43b79434c30
+2026-01-12 08:22:42 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 08:22:42 | DEBUG | root | format_retrieved_docs | （育児休業） 
+第１条 育児のために休業することを希望する従業員(日雇従業員を除く)であって、１歳に
+満たない子と同居し、養育する者は、申出により、育児休業をすることができる。
+ただし、有期契約従業員にあっては、申出時点において、次のいずれにも該当する
+者に限り、育児休業をすることができる。 
+ 1 入社１年以上であること 
+ 2 子が１歳６か月(第５項の申出にあたっては２歳)になるまでに労働契約期間が
+満了し、更新されないことが明らかでないこと 
+(2) 前項にかかわらず、労使協定により除外された次の従業員からの休業の申出は拒む
+ことができる。 
+ 1 入社１年未満の従業員 
+ 2 申出の日から１年以内(第４項及び第５項の申出をする場合は、６か月以内)に
+雇用関係が終了することが明らかな従業員 
+ 3 １週間の所定労働日数が２日以下の従業員 
+(3) 配偶者が従業員と同じ日から又は従業員より先に育児休業をしている場合、従業員
+は、子が１歳２か月に達するまでの間で、出生日以後の産前・産後休業期間と育児
+休業期間との合計が１年を限度として、育児休業をすることができる。 
+(4) 次のいずれにも該当する従業員は、子が１歳６か月に達するまでの間で必要な日数
+について育児休業をすることができる。なお、育児休業を開始しようとする日は、
+原則として子の１歳の誕生日に限るものとする。 
+ 1  従業員又は配偶者が原則として子の１歳の誕生日の前日に育児休業をしている
+こと 
+ 2  次のいずれかの事情があること 
+ · 保育所等に入所を希望しているが、入所できない場合 
+ · 従業員の配偶者であって育児休業の対象となる子の親であり、１歳以降育
+児に当たる予定であった者が、死亡、負傷、疾病等の事情により子を養育
+することが困難になった場合 
+(5) 次のいずれにも該当する従業員は、子が２歳に達するまでの間で必要な日数につい
+て育児休業をすることができる。なお、育児休業を開始しようとする日は、子の１
+歳６か月の誕生日応当日に限るものとする。 
+ 1 従業員又は配偶者が子の１歳６か月の誕生日応当日の前日に育児休業をしてい
+ること 
+ 2 次のいずれかの事情があること 
+ · 保育所等に入所を希望しているが、入所できない場合
+
+(5) 次のいずれにも該当する従業員は、子が２歳に達するまでの間で必要な日数につい
+て育児休業をすることができる。なお、育児休業を開始しようとする日は、子の１
+歳６か月の誕生日応当日に限るものとする。 
+ 1 従業員又は配偶者が子の１歳６か月の誕生日応当日の前日に育児休業をしてい
+ること 
+ 2 次のいずれかの事情があること 
+ · 保育所等に入所を希望しているが、入所できない場合 
+ · 従業員の配偶者であって育児休業の対象となる子の親であり、１歳６か月
+以降育児に当たる予定であった者が、死亡、負傷、疾病等の事情により子
+を養育することが困難になった場合 
+(6) 育児休業をすることを希望する従業員は、原則として、育児休業を開始しようとす
+る日の１か月前(第４項及び第５項に基づく１歳及び１歳６か月を超える休業の場
+合は、２週間前)までに、育児休業申出書を人事担当者に提出することにより申し
+出るものとする。 
+(7) 育児休業申出書が提出されたときは、会社は速やかに当該育児休業申出書を提出し
+た者に対し、育児休業取扱通知書を交付する。
+
+合 
+当該事由が発生した日 
+ 2 制限に係る子が３歳に達した場合 
+子が３歳に達した日 
+ 3 申出者について、産前産後休業、育児休業又は介護休業が始まった場合 
+産前産後休業、育児休業又は介護休業の開始日の前日 
+(6) 前項①の事由が生じた場合には、申出者は原則として当該事由が生じた日に、人事
+担当者にその旨を通知しなければならない。 
   
-（介護短時間勤務） 
-第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ
-り、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午
-前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 
-(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は
-拒むことができる。 
- 1  日雇従業員 
- 2  労使協定によって除外された次の従業員 
- · 入社１年未満の従業員 
- · １週間の所定労働日数が２日以下の従業員
+（育児・介護のための時間外労働の制限） 
+第６条 小学校就学の始期に達するまでの子を養育する従業員が当該子を養育するため又は
+要介護状態にある家族を介護する従業員が当該家族を介護するために申し出た場合
+には、就業規則及び時間外労働に関する協定にかかわらず、事業の正常な運営に支
+障がある場合を除き、１か月について 24 時間、１年について 150 時間を超えて時
+間外労働をさせることはない。 
+(2) 前項にかかわらず、次の①から③のいずれかに該当する従業員は育児のための時間
+外労働の制限及び介護のための時間外労働の制限を申し出ることができない。 
+ 1  日雇従業員
+2026-01-12 08:22:42 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 08:22:42 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Raw-Response': 'true'}, 'files': None, 'idempotency_key': 'stainless-python-retry-580981ce-e9eb-4691-b81c-3a312286e614', 'json_data': {'messages': [{'content': 'あなたは社内文書を参照して質問に回答するAIアシスタントです。\n\n    以下のルールを厳守してください。\n    - 回答は提供されたコンテキストに基づいて行うこと\n    - コンテキストに記載がない内容は、推測をすること\n    - 例えば育休、育児休暇、育児休業、といった類義語も含めて対応すること\n    - もし類義語や関連する用語があれば、それらも考慮して回答すること\n      そしてそのような回答をするときは「（類義語や関連用語）も含めて」と明示すること\n    - 回答は日本語で、簡潔かつ分かりやすく記述すること\n    - 不明な場合は、以下のように回答すること。\n    「就業規則に該当する記載がありません。恐れ入りますが質問を見直すか、人事にお問い合わせください。」\n    「判断できなかった理由は以下の通りです：（理由を具体的に記載）」', 'role': 'system'}, {'content': '【コンテキスト】\n（育児休業） \n第１条 育児のために休業することを希望する従業員(日雇従業員を除く)であって、１歳に\n満たない子と同居し、養育する者は、申出により、育児休業をすることができる。\nただし、有期契約従業員にあっては、申出時点において、次のいずれにも該当する\n者に限り、育児休業をすることができる。 \n 1 入社１年以上であること \n 2 子が１歳６か月(第５項の申出にあたっては２歳)になるまでに労働契約期間が\n満了し、更新されないことが明らかでないこと \n(2) 前項にかかわらず、労使協定により除外された次の従業員からの休業の申出は拒む\nことができる。 \n 1 入社１年未満の従業員 \n 2 申出の日から１年以内(第４項及び第５項の申出をする場合は、６か月以内)に\n雇用関係が終了することが明らかな従業員 \n 3 １週間の所定労働日数が２日以下の従業員 \n(3) 配偶者が従業員と同じ日から又は従業員より先に育児休業をしている場合、従業員\nは、子が１歳２か月に達するまでの間で、出生日以後の産前・産後休業期間と育児\n休業期間との合計が１年を限度として、育児休業をすることができる。 \n(4) 次のいずれにも該当する従業員は、子が１歳６か月に達するまでの間で必要な日数\nについて育児休業をすることができる。なお、育児休業を開始しようとする日は、\n原則として子の１歳の誕生日に限るものとする。 \n 1  従業員又は配偶者が原則として子の１歳の誕生日の前日に育児休業をしている\nこと \n 2  次のいずれかの事情があること \n · 保育所等に入所を希望しているが、入所できない場合 \n · 従業員の配偶者であって育児休業の対象となる子の親であり、１歳以降育\n児に当たる予定であった者が、死亡、負傷、疾病等の事情により子を養育\nすることが困難になった場合 \n(5) 次のいずれにも該当する従業員は、子が２歳に達するまでの間で必要な日数につい\nて育児休業をすることができる。なお、育児休業を開始しようとする日は、子の１\n歳６か月の誕生日応当日に限るものとする。 \n 1 従業員又は配偶者が子の１歳６か月の誕生日応当日の前日に育児休業をしてい\nること \n 2 次のいずれかの事情があること \n · 保育所等に入所を希望しているが、入所できない場合\n\n(5) 次のいずれにも該当する従業員は、子が２歳に達するまでの間で必要な日数につい\nて育児休業をすることができる。なお、育児休業を開始しようとする日は、子の１\n歳６か月の誕生日応当日に限るものとする。 \n 1 従業員又は配偶者が子の１歳６か月の誕生日応当日の前日に育児休業をしてい\nること \n 2 次のいずれかの事情があること \n · 保育所等に入所を希望しているが、入所できない場合 \n · 従業員の配偶者であって育児休業の対象となる子の親であり、１歳６か月\n以降育児に当たる予定であった者が、死亡、負傷、疾病等の事情により子\nを養育することが困難になった場合 \n(6) 育児休業をすることを希望する従業員は、原則として、育児休業を開始しようとす\nる日の１か月前(第４項及び第５項に基づく１歳及び１歳６か月を超える休業の場\n合は、２週間前)までに、育児休業申出書を人事担当者に提出することにより申し\n出るものとする。 \n(7) 育児休業申出書が提出されたときは、会社は速やかに当該育児休業申出書を提出し\nた者に対し、育児休業取扱通知書を交付する。\n\n合 \n当該事由が発生した日 \n 2 制限に係る子が３歳に達した場合 \n子が３歳に達した日 \n 3 申出者について、産前産後休業、育児休業又は介護休業が始まった場合 \n産前産後休業、育児休業又は介護休業の開始日の前日 \n(6) 前項①の事由が生じた場合には、申出者は原則として当該事由が生じた日に、人事\n担当者にその旨を通知しなければならない。 \n  \n（育児・介護のための時間外労働の制限） \n第６条 小学校就学の始期に達するまでの子を養育する従業員が当該子を養育するため又は\n要介護状態にある家族を介護する従業員が当該家族を介護するために申し出た場合\nには、就業規則及び時間外労働に関する協定にかかわらず、事業の正常な運営に支\n障がある場合を除き、１か月について 24 時間、１年について 150 時間を超えて時\n間外労働をさせることはない。 \n(2) 前項にかかわらず、次の①から③のいずれかに該当する従業員は育児のための時間\n外労働の制限及び介護のための時間外労働の制限を申し出ることができない。 \n 1  日雇従業員\n\n【質問】\n育児休業について教えてください', 'role': 'user'}], 'model': 'gpt-5.1', 'stream': False}}
+2026-01-12 08:22:42 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-01-12 08:22:42 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2026-01-12 08:22:42 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7ff270e4ca70>
+2026-01-12 08:22:42 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7ff270e23150> server_hostname='api.openai.com' timeout=None
+2026-01-12 08:22:42 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7ff270e4c740>
+2026-01-12 08:22:42 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
+2026-01-12 08:22:42 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
+2026-01-12 08:22:42 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
+2026-01-12 08:22:42 | DEBUG | httpcore.http11 | trace | send_request_body.complete
+2026-01-12 08:22:42 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
+2026-01-12 08:22:42 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 08:22:58 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 12 Jan 2026 08:22:57 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'15551'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'x-envoy-upstream-service-time', b'15805'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'498397'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'192ms'), (b'x-request-id', b'req_e8b0d69c849b498c948d126405227c1c'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=fYj_dv9gHi2L41bjKGlqktS1hYRm6FnGIugFBkKFGJo-1768206177-1.0.1.1-pk55eqG_SToG.CnZxR8ala0xWljSlYSDCovokMu_FcWrgWk_xYjQi4eDhHYh1mowTOxkPINbZTeh89v51fzJJuCuCfVnYgZ29a6HwCVBGJU; path=/; expires=Mon, 12-Jan-26 08:52:57 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=kNZ_sTg34Yg.68u4yPwapcPJt5uZhzKiYcyAj8HoJ.0-1768206177404-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9bcb3f5a7ba019d6-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-01-12 08:22:58 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 08:22:58 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
+2026-01-12 08:22:58 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
+2026-01-12 08:22:58 | DEBUG | httpcore.http11 | trace | response_closed.started
+2026-01-12 08:22:58 | DEBUG | httpcore.http11 | trace | response_closed.complete
+2026-01-12 08:22:58 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Mon, 12 Jan 2026 08:22:57 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-8h9z34f8lpywhopvlvfbenye'), ('openai-processing-ms', '15551'), ('openai-project', 'proj_Il1h3X7vESPR7KXprIiKIv6d'), ('openai-version', '2020-10-01'), ('x-envoy-upstream-service-time', '15805'), ('x-ratelimit-limit-requests', '500'), ('x-ratelimit-limit-tokens', '500000'), ('x-ratelimit-remaining-requests', '499'), ('x-ratelimit-remaining-tokens', '498397'), ('x-ratelimit-reset-requests', '120ms'), ('x-ratelimit-reset-tokens', '192ms'), ('x-request-id', 'req_e8b0d69c849b498c948d126405227c1c'), ('x-openai-proxy-wasm', 'v0.1'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=fYj_dv9gHi2L41bjKGlqktS1hYRm6FnGIugFBkKFGJo-1768206177-1.0.1.1-pk55eqG_SToG.CnZxR8ala0xWljSlYSDCovokMu_FcWrgWk_xYjQi4eDhHYh1mowTOxkPINbZTeh89v51fzJJuCuCfVnYgZ29a6HwCVBGJU; path=/; expires=Mon, 12-Jan-26 08:52:57 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=kNZ_sTg34Yg.68u4yPwapcPJt5uZhzKiYcyAj8HoJ.0-1768206177404-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9bcb3f5a7ba019d6-KIX'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2026-01-12 08:22:58 | DEBUG | openai._base_client | request | request_id: req_e8b0d69c849b498c948d126405227c1c
+2026-01-12 08:22:58 | INFO | common.telemetry | wrapper | 関数askの実行時間 completed | elapsed_ms=17858.05 | function=ask
+2026-01-12 08:25:31 | INFO | __main__ | wrapper | start
+2026-01-12 08:25:31 | INFO | __main__ | wrapper | end
+2026-01-12 08:25:32 | INFO | __main__ | wrapper | start
+2026-01-12 08:25:32 | INFO | __main__ | wrapper | end
+2026-01-12 08:25:32 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'idempotency_key': 'stainless-python-retry-7fea6295-f4db-4147-8fdd-e77a32e273f9', 'post_parser': <function Embeddings.create.<locals>.parser at 0x7ff287f66520>, 'json_data': {'input': [[86127, 15682, 37656, 61337, 20648, 94, 16556, 17701, 61337, 16, 8107, 30832, 38641, 1811, 19361, 58254, 99, 15682, 8107, 99849, 18904, 18655, 33121, 33541, 32149, 11571]], 'model': 'text-embedding-3-small', 'encoding_format': 'base64'}}
+2026-01-12 08:25:32 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | close.started
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | close.complete
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7ff270e0fe30>
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7ff271284950> server_hostname='api.openai.com' timeout=None
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7ff270e0f560>
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | send_request_body.complete
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 12 Jan 2026 08:25:31 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-3-small'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'62'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-86dc447bdb-ljwgc'), (b'x-envoy-upstream-service-time', b'197'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999973'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'1ms'), (b'x-request-id', b'req_615ecb4e5467454ab052963cf2a3ecf6'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9bcb437f9dacfc9e-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-01-12 08:25:32 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | response_closed.started
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | response_closed.complete
+2026-01-12 08:25:32 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers({'date': 'Mon, 12 Jan 2026 08:25:31 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'X-Request-ID', 'openai-model': 'text-embedding-3-small', 'openai-organization': 'user-8h9z34f8lpywhopvlvfbenye', 'openai-processing-ms': '62', 'openai-project': 'proj_Il1h3X7vESPR7KXprIiKIv6d', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'via': 'envoy-router-86dc447bdb-ljwgc', 'x-envoy-upstream-service-time': '197', 'x-ratelimit-limit-requests': '3000', 'x-ratelimit-limit-tokens': '1000000', 'x-ratelimit-remaining-requests': '2999', 'x-ratelimit-remaining-tokens': '999973', 'x-ratelimit-reset-requests': '20ms', 'x-ratelimit-reset-tokens': '1ms', 'x-request-id': 'req_615ecb4e5467454ab052963cf2a3ecf6', 'x-openai-proxy-wasm': 'v0.1', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '9bcb437f9dacfc9e-KIX', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-01-12 08:25:32 | DEBUG | openai._base_client | request | request_id: req_615ecb4e5467454ab052963cf2a3ecf6
+2026-01-12 08:25:32 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 08:25:32 | DEBUG | root | format_retrieved_docs | - 4 -
+（役職手当） 
+第 19 条 会社が認める役職を有する者には、次に規定する役職手当を業績に応じて支給
+する。 
+ マネージャー 
+１年目 月額 15,000 円 
+２年目 月額 20,000 円 
+３年目 月額 25,000 円 
+４年目以降 月額 30,000 円 
+ 
+リーダー 
+１年目 月額 7,000 円 
+２年目以降 月額 9,000 円 
+ 
+サポーター 
+１年目 月額 3,000 円 
+２年目以降 月額 5,000 円 
 
-(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮
-を開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし
-て、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担
-当者に申し出なければならない。 
+（通勤手当） 
+第 20 条 次の移動手段を利用し通勤する者に対して通勤手当を支給する。 
+ ① 公共交通機関を利用して通勤する者は、定期券代に相当する額を支給する。
+バス代については、自宅から電車の最寄り駅が２km 以上であれば支給す
+る。 
+ただし、月額合計 30,000 円を限度とする。 
+ ② マイカーを利用して通勤する者は、ガソリン車、電気自動車の区分に分け、
+次の計算により支給する。ただし、月額 30,000 円を限度とする。 
+  １．ガソリン車 
+    片道の通勤最短距離×10 円/㎞×勤務日数×往復分 
+  ２．電気自動車 
+    片道の通勤最短距離×３円/㎞×勤務日数×往復分 
+(2) 前項において、通勤距離及び通勤時間を勘案し、やむを得ないと会社が判断し
+た場合は、月額の上限額を超えて支給することがある。 
   
-（介護短時間勤務） 
-第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ
-り、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午
-前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 
-(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は
-拒むことができる。 
- 1  日雇従業員 
- 2  労使協定によって除外された次の従業員 
- · 入社１年未満の従業員 
- · １週間の所定労働日数が２日以下の従業員
-
-(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮
-を開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし
-て、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担
-当者に申し出なければならない。 
+（資格一時金） 
+第 21 条 会社が認める資格を有する者には、資格一時金を支給する。 
   
-（介護短時間勤務） 
-第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ
-り、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午
-前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 
-(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は
-拒むことができる。 
- 1  日雇従業員 
- 2  労使協定によって除外された次の従業員 
- · 入社１年未満の従業員 
- · １週間の所定労働日数が２日以下の従業員
-2026-01-09 23:55:08 | INFO | rag_core.query.retrieve | wrapper | end
-2026-01-09 23:55:08 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Raw-Response': 'true'}, 'files': None, 'idempotency_key': 'stainless-python-retry-e068d039-3f63-46f6-99e2-f739a62a09ce', 'json_data': {'messages': [{'content': 'あなたは社内文書を参照して質問に回答するAIアシスタントです。\n\n    以下のルールを厳守してください。\n    - 回答は提供されたコンテキストに基づいて行うこと\n    - コンテキストに記載がない内容は、推測をすること\n    - 例えば育休、育児休暇、育児休業、といった類義語も含めて対応すること\n    - もし類義語や関連する用語があれば、それらも考慮して回答すること\n      そしてそのような回答をするときは「（類義語や関連用語）も含めて」と明示すること\n    - 回答は日本語で、簡潔かつ分かりやすく記述すること\n    - 不明な場合は、以下のように回答すること。\n    「就業規則に該当する記載がありません。恐れ入りますが質問を見直すか、人事にお問い合わせください。」\n    「判断できなかった理由は以下の通りです：（理由を具体的に記載）」', 'role': 'system'}, {'content': '【コンテキスト】\n(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮\nを開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし\nて、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担\n当者に申し出なければならない。 \n  \n（介護短時間勤務） \n第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ\nり、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午\n前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 \n(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は\n拒むことができる。 \n 1  日雇従業員 \n 2  労使協定によって除外された次の従業員 \n · 入社１年未満の従業員 \n · １週間の所定労働日数が２日以下の従業員\n\n(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮\nを開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし\nて、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担\n当者に申し出なければならない。 \n  \n（介護短時間勤務） \n第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ\nり、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午\n前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 \n(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は\n拒むことができる。 \n 1  日雇従業員 \n 2  労使協定によって除外された次の従業員 \n · 入社１年未満の従業員 \n · １週間の所定労働日数が２日以下の従業員\n\n(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮\nを開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし\nて、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担\n当者に申し出なければならない。 \n  \n（介護短時間勤務） \n第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ\nり、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午\n前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 \n(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は\n拒むことができる。 \n 1  日雇従業員 \n 2  労使協定によって除外された次の従業員 \n · 入社１年未満の従業員 \n · １週間の所定労働日数が２日以下の従業員\n\n【質問】\n時短について教えてください。', 'role': 'user'}], 'model': 'gpt-5.1', 'stream': False}}
-2026-01-09 23:55:08 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
-2026-01-09 23:55:08 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
-2026-01-09 23:55:08 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
-2026-01-09 23:55:08 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8f6d62bef0>
-2026-01-09 23:55:08 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7f8f6d5129d0> server_hostname='api.openai.com' timeout=None
-2026-01-09 23:55:08 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8f6d8e1280>
-2026-01-09 23:55:08 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
-2026-01-09 23:55:08 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
-2026-01-09 23:55:08 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
-2026-01-09 23:55:08 | DEBUG | httpcore.http11 | trace | send_request_body.complete
-2026-01-09 23:55:08 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
-2026-01-09 23:55:15 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 09 Jan 2026 23:55:15 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'6190'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'x-envoy-upstream-service-time', b'6423'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'498910'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'130ms'), (b'x-request-id', b'req_f6d66c3fb5534752ae4e483e936be457'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=56WHuC7ZxheWY2SU5Uzn3sYvp_sbKoi71FDJNC8rVqQ-1768002915-1.0.1.1-S5FMwsby3wBLidyM5naqcKhHdxCtVfGew787hU3eTqBovbIV4u53cu3vXwnYLQtPv_wx6ndfD_z45rc3ogjwY9Ar5jopunvIBN8z4qQYJw4; path=/; expires=Sat, 10-Jan-26 00:25:15 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=I1ukzVJK3hJ0onQbEP.mPGbLHNaktThibLamm0sncPE-1768002915126-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9bb7dd1e9859fca0-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
-2026-01-09 23:55:15 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-09 23:55:15 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
-2026-01-09 23:55:15 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
-2026-01-09 23:55:15 | DEBUG | httpcore.http11 | trace | response_closed.started
-2026-01-09 23:55:15 | DEBUG | httpcore.http11 | trace | response_closed.complete
-2026-01-09 23:55:15 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Fri, 09 Jan 2026 23:55:15 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-8h9z34f8lpywhopvlvfbenye'), ('openai-processing-ms', '6190'), ('openai-project', 'proj_Il1h3X7vESPR7KXprIiKIv6d'), ('openai-version', '2020-10-01'), ('x-envoy-upstream-service-time', '6423'), ('x-ratelimit-limit-requests', '500'), ('x-ratelimit-limit-tokens', '500000'), ('x-ratelimit-remaining-requests', '499'), ('x-ratelimit-remaining-tokens', '498910'), ('x-ratelimit-reset-requests', '120ms'), ('x-ratelimit-reset-tokens', '130ms'), ('x-request-id', 'req_f6d66c3fb5534752ae4e483e936be457'), ('x-openai-proxy-wasm', 'v0.1'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=56WHuC7ZxheWY2SU5Uzn3sYvp_sbKoi71FDJNC8rVqQ-1768002915-1.0.1.1-S5FMwsby3wBLidyM5naqcKhHdxCtVfGew787hU3eTqBovbIV4u53cu3vXwnYLQtPv_wx6ndfD_z45rc3ogjwY9Ar5jopunvIBN8z4qQYJw4; path=/; expires=Sat, 10-Jan-26 00:25:15 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=I1ukzVJK3hJ0onQbEP.mPGbLHNaktThibLamm0sncPE-1768002915126-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9bb7dd1e9859fca0-KIX'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
-2026-01-09 23:55:15 | DEBUG | openai._base_client | request | request_id: req_f6d66c3fb5534752ae4e483e936be457
-2026-01-09 23:57:22 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'idempotency_key': 'stainless-python-retry-923e29bc-7f2f-4160-b2ad-75d2f0fcae3d', 'post_parser': <function Embeddings.create.<locals>.parser at 0x7f8f93b7f420>, 'json_data': {'input': [[57942, 110, 17885, 239, 20230, 59739, 16995, 38144, 8067, 247, 58942, 38144, 72315, 1811]], 'model': 'text-embedding-3-small', 'encoding_format': 'base64'}}
-2026-01-09 23:57:22 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/embeddings
-2026-01-09 23:57:22 | DEBUG | httpcore.connection | trace | close.started
-2026-01-09 23:57:22 | DEBUG | httpcore.connection | trace | close.complete
-2026-01-09 23:57:22 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
-2026-01-09 23:57:22 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8f6d527f20>
-2026-01-09 23:57:22 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7f8f6da80850> server_hostname='api.openai.com' timeout=None
-2026-01-09 23:57:22 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8f6d525370>
-2026-01-09 23:57:22 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
-2026-01-09 23:57:22 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
-2026-01-09 23:57:22 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
-2026-01-09 23:57:22 | DEBUG | httpcore.http11 | trace | send_request_body.complete
-2026-01-09 23:57:22 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
-2026-01-09 23:57:23 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 09 Jan 2026 23:57:22 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-3-small'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'87'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-96c6fc676-gj9sv'), (b'x-envoy-upstream-service-time', b'298'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999986'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'req_b8fdb53d5919410280687a35da27b20e'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9bb7e0644a6d836c-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
-2026-01-09 23:57:23 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-2026-01-09 23:57:23 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
-2026-01-09 23:57:23 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
-2026-01-09 23:57:23 | DEBUG | httpcore.http11 | trace | response_closed.started
-2026-01-09 23:57:23 | DEBUG | httpcore.http11 | trace | response_closed.complete
-2026-01-09 23:57:23 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers({'date': 'Fri, 09 Jan 2026 23:57:22 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-allow-origin': '*', 'access-control-expose-headers': 'X-Request-ID', 'openai-model': 'text-embedding-3-small', 'openai-organization': 'user-8h9z34f8lpywhopvlvfbenye', 'openai-processing-ms': '87', 'openai-project': 'proj_Il1h3X7vESPR7KXprIiKIv6d', 'openai-version': '2020-10-01', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'via': 'envoy-router-96c6fc676-gj9sv', 'x-envoy-upstream-service-time': '298', 'x-ratelimit-limit-requests': '3000', 'x-ratelimit-limit-tokens': '1000000', 'x-ratelimit-remaining-requests': '2999', 'x-ratelimit-remaining-tokens': '999986', 'x-ratelimit-reset-requests': '20ms', 'x-ratelimit-reset-tokens': '0s', 'x-request-id': 'req_b8fdb53d5919410280687a35da27b20e', 'x-openai-proxy-wasm': 'v0.1', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '9bb7e0644a6d836c-KIX', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
-2026-01-09 23:57:23 | DEBUG | openai._base_client | request | request_id: req_b8fdb53d5919410280687a35da27b20e
-2026-01-09 23:57:23 | INFO | rag_core.query.retrieve | wrapper | start
-2026-01-09 23:57:23 | DEBUG | root | format_retrieved_docs | 育児・介護休暇休業規程 
+（単身赴任手当） 
+第 22 条 単身赴任手当は、単身赴任者に対して、次に規定する金額を支給する。 
+  
+管理職 月額 30,000円  
+一般社員 月額 20,000円  
 
-株式会社ドリームジャック
+（年末調整による還付金の支払日） 
+第 23 条 年末調整による還付金の支払日は、第３条で定めるところによる。 
+  
+第４章 賞与 
+（賞与） 
+第 24 条 賞与は、原則として毎年７月及び 12 月に、有期契約労働者及び派遣社員を除く
+社員に対し、会社の各期業績及び本人の勤務成績等を勘案して支給する。
 
-育児・介護休暇休業規程 
+- 5 -
+(3) 満 18 歳未満の社員については、労働基準法で定める１週１日の休日に労働を命
+じることはない。 
+ 
+（割増賃金） 
+第 16 条 第 13 条、第 14 条または前条による時間外労働、休日労働もしくは深夜労働に対
+しては、賃金規程の定めるところによって割増賃金を支払う。 
+ 
+（出張等の勤務時間及び旅費） 
+第 17 条 社員が、 出張その他会社の用務をおびて会社外で勤務する場合で勤務時間を算定
+しがたい場合は、原則として第８条の時間を勤務したものとみなす。ただし、部
+門長があらかじめ別段の指示をした場合はこの限りでない。 
+(2) 社員が社用により出張する場合は、別に定める旅費を支給する。 
+ 
+（適用除外） 
+第 18 条 労働基準法第 41 条第２号または第３号に該当する管理監督者または監視断続労
+働従事者等については、本節の規定（深夜労働に関する規定を除く。 ）にかかわ
+らず勤務を命じ、本節の規定を適用しないことがある。 
+ 
+第２節 休暇等 
+（年次有給休暇） 
+第 19 条 社員に対し、次の表の勤続年数に応じ、日数の年次有給休暇を与える。ただし、 
+前１年間（採用当初は前６ヶ月）の出勤率が８割に満たない社員には当該期間に
+対する年次有給休暇は付与しない。 
+ 勤 続 年 数 0.5 1.5 2.5 3.5 4.5 5.5 6.5 年以上 
+付 与 日 数 10 11 12 14 16 18 20 日 
+ 
+(2) 年次有給休暇を取得しようとする場合は、前日までに所定の手続きにより、部門
+長まで届け出なければならない。 
+(3) 年次有給休暇は、社員が指定した時期に与える。ただし、事業の都合によりやむ
+を得ない場合には他の時期に変更することがある。 
+(4) 当該年度に行使しなかった年次有給休暇は、次年度に限り繰越すことができる。 
+(5) 年次有給休暇を取得した期間については、通常の賃金を支払う。 
+ 
+（年次有給休暇の計画的付与） 
+第 20 条 社員代表との協定により、年次有給休暇を計画的に付与することとした場合に
+は、前条第３項の規定にかかわらず、当該協定の定めるところにより年次有給休
+暇を付与するものとする。
 
-株式会社ドリームジャック
+２．60 時間を超える時間外勤務割増賃金 
+ 基本給（職能給・職務給） 
+＋家族手当、通勤手当を除く諸手当 ×1.50×時間外勤務時
+間数 1 ヶ月平均所定勤務時間 
 
-育児・介護休暇休業規程 
+② 休日勤務割増賃金 
+ 基本給（職能給・職務給） 
+＋家族手当、通勤手当を除く諸手当 ×1.35×休日勤務時間数 
+1 ヶ月平均所定勤務時間 
 
-株式会社ドリームジャック
-2026-01-09 23:57:23 | INFO | rag_core.query.retrieve | wrapper | end
-2026-01-09 23:57:23 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Raw-Response': 'true'}, 'files': None, 'idempotency_key': 'stainless-python-retry-14578490-6d69-4225-be37-088d99ec68c1', 'json_data': {'messages': [{'content': 'あなたは社内文書を参照して質問に回答するAIアシスタントです。\n\n    以下のルールを厳守してください。\n    - 回答は提供されたコンテキストに基づいて行うこと\n    - コンテキストに記載がない内容は、推測をすること\n    - 例えば育休、育児休暇、育児休業、といった類義語も含めて対応すること\n    - もし類義語や関連する用語があれば、それらも考慮して回答すること\n      そしてそのような回答をするときは「（類義語や関連用語）も含めて」と明示すること\n    - 回答は日本語で、簡潔かつ分かりやすく記述すること\n    - 不明な場合は、以下のように回答すること。\n    「就業規則に該当する記載がありません。恐れ入りますが質問を見直すか、人事にお問い合わせください。」\n    「判断できなかった理由は以下の通りです：（理由を具体的に記載）」', 'role': 'system'}, {'content': '【コンテキスト】\n育児・介護休暇休業規程 \n\n株式会社ドリームジャック\n\n育児・介護休暇休業規程 \n\n株式会社ドリームジャック\n\n育児・介護休暇休業規程 \n\n株式会社ドリームジャック\n\n【質問】\n育休について教えてください。', 'role': 'user'}], 'model': 'gpt-5.1', 'stream': False}}
-2026-01-09 23:57:23 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
-2026-01-09 23:57:23 | DEBUG | httpcore.connection | trace | close.started
-2026-01-09 23:57:23 | DEBUG | httpcore.connection | trace | close.complete
-2026-01-09 23:57:23 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
-2026-01-09 23:57:23 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8f6d530a40>
-2026-01-09 23:57:23 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7f8f6d5129d0> server_hostname='api.openai.com' timeout=None
-2026-01-09 23:57:23 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8f904a1640>
-2026-01-09 23:57:23 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
-2026-01-09 23:57:23 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
-2026-01-09 23:57:23 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
-2026-01-09 23:57:23 | DEBUG | httpcore.http11 | trace | send_request_body.complete
-2026-01-09 23:57:23 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
-2026-01-09 23:57:25 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 09 Jan 2026 23:57:25 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'2000'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'x-envoy-upstream-service-time', b'2023'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'499665'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'40ms'), (b'x-request-id', b'req_37b00e8e8d4b47fe9cd0ba6d5abcff61'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9bb7e06b090fcfff-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
-2026-01-09 23:57:25 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-09 23:57:25 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
-2026-01-09 23:57:25 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
-2026-01-09 23:57:25 | DEBUG | httpcore.http11 | trace | response_closed.started
-2026-01-09 23:57:25 | DEBUG | httpcore.http11 | trace | response_closed.complete
-2026-01-09 23:57:25 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Fri, 09 Jan 2026 23:57:25 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8h9z34f8lpywhopvlvfbenye', 'openai-processing-ms': '2000', 'openai-project': 'proj_Il1h3X7vESPR7KXprIiKIv6d', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '2023', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '500000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '499665', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '40ms', 'x-request-id': 'req_37b00e8e8d4b47fe9cd0ba6d5abcff61', 'x-openai-proxy-wasm': 'v0.1', 'cf-cache-status': 'DYNAMIC', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '9bb7e06b090fcfff-KIX', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
-2026-01-09 23:57:25 | DEBUG | openai._base_client | request | request_id: req_37b00e8e8d4b47fe9cd0ba6d5abcff61
+③ 深夜勤務割増賃金 
+ 基本給（職能給・職務給） 
+＋家族手当、通勤手当を除く諸手当 ×0.25×深夜勤務時間数 
+1 ヶ月平均所定勤務時間 
+ 
+(2) 所定勤務時間と固定残業時間を超えて、または休日に勤務した時間が深夜にお
+よんだ場合は、それぞれ時間外勤務割増賃金または休日勤務割増賃金と深夜勤
+務割増賃金を合計した割増賃金を支給する。 
+(3) 第１項の１ヶ月の平均所定勤務時間数は次の算式により計算する。 
+ （365 － 年間所定休日日数）×１日の所定勤務時間数   12 
+ 
+(4) 1 時間あたりの賃金額及び割増賃金額に円未満の端数が生じた場合、1 円未満の
+端数を 1 円に切り上げるものとする。 
+  
+（成績手当） 
+第 16 条 会社に対して特別な貢献があったと会社が認めた者に対し、成績手当を支給す
+ることがある。成績手当の額は、その貢献度合いに応じて都度決めるものとす
+る。 
+  
+（家族手当） 
+第 17 条 次の家族を扶養している社員に対して家族手当を支給する。 
+ ① 配偶者          月額 10,000 円 
+ ② 16 歳未満の子１人につき   月額 5,000 円 
+  
+（調整手当） 
+第 18 条 必要に応じ、会社が認めた者に対し、調整手当を支給することがある。調整手
+当の額は、その都度決めるものとする。
+2026-01-12 08:25:32 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 08:25:32 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Raw-Response': 'true'}, 'files': None, 'idempotency_key': 'stainless-python-retry-8fe7caf6-dd87-490b-8573-ce18f4eca64d', 'json_data': {'messages': [{'content': 'あなたは社内文書を参照して質問に回答するAIアシスタントです。\n\n    以下のルールを厳守してください。\n    - 回答は提供されたコンテキストに基づいて行うこと\n    - コンテキストに記載がない内容は、推測をすること\n    - 例えば育休、育児休暇、育児休業、といった類義語も含めて対応すること\n    - もし類義語や関連する用語があれば、それらも考慮して回答すること\n      そしてそのような回答をするときは「（類義語や関連用語）も含めて」と明示すること\n    - 回答は日本語で、簡潔かつ分かりやすく記述すること\n    - 不明な場合は、以下のように回答すること。\n    「就業規則に該当する記載がありません。恐れ入りますが質問を見直すか、人事にお問い合わせください。」\n    「判断できなかった理由は以下の通りです：（理由を具体的に記載）」', 'role': 'system'}, {'content': '【コンテキスト】\n- 4 -\n（役職手当） \n第 19 条 会社が認める役職を有する者には、次に規定する役職手当を業績に応じて支給\nする。 \n マネージャー \n１年目 月額 15,000 円 \n２年目 月額 20,000 円 \n３年目 月額 25,000 円 \n４年目以降 月額 30,000 円 \n \nリーダー \n１年目 月額 7,000 円 \n２年目以降 月額 9,000 円 \n \nサポーター \n１年目 月額 3,000 円 \n２年目以降 月額 5,000 円 \n\n（通勤手当） \n第 20 条 次の移動手段を利用し通勤する者に対して通勤手当を支給する。 \n ① 公共交通機関を利用して通勤する者は、定期券代に相当する額を支給する。\nバス代については、自宅から電車の最寄り駅が２km 以上であれば支給す\nる。 \nただし、月額合計 30,000 円を限度とする。 \n ② マイカーを利用して通勤する者は、ガソリン車、電気自動車の区分に分け、\n次の計算により支給する。ただし、月額 30,000 円を限度とする。 \n  １．ガソリン車 \n    片道の通勤最短距離×10 円/㎞×勤務日数×往復分 \n  ２．電気自動車 \n    片道の通勤最短距離×３円/㎞×勤務日数×往復分 \n(2) 前項において、通勤距離及び通勤時間を勘案し、やむを得ないと会社が判断し\nた場合は、月額の上限額を超えて支給することがある。 \n  \n（資格一時金） \n第 21 条 会社が認める資格を有する者には、資格一時金を支給する。 \n  \n（単身赴任手当） \n第 22 条 単身赴任手当は、単身赴任者に対して、次に規定する金額を支給する。 \n  \n管理職 月額 30,000円  \n一般社員 月額 20,000円  \n\n（年末調整による還付金の支払日） \n第 23 条 年末調整による還付金の支払日は、第３条で定めるところによる。 \n  \n第４章 賞与 \n（賞与） \n第 24 条 賞与は、原則として毎年７月及び 12 月に、有期契約労働者及び派遣社員を除く\n社員に対し、会社の各期業績及び本人の勤務成績等を勘案して支給する。\n\n- 5 -\n(3) 満 18 歳未満の社員については、労働基準法で定める１週１日の休日に労働を命\nじることはない。 \n \n（割増賃金） \n第 16 条 第 13 条、第 14 条または前条による時間外労働、休日労働もしくは深夜労働に対\nしては、賃金規程の定めるところによって割増賃金を支払う。 \n \n（出張等の勤務時間及び旅費） \n第 17 条 社員が、 出張その他会社の用務をおびて会社外で勤務する場合で勤務時間を算定\nしがたい場合は、原則として第８条の時間を勤務したものとみなす。ただし、部\n門長があらかじめ別段の指示をした場合はこの限りでない。 \n(2) 社員が社用により出張する場合は、別に定める旅費を支給する。 \n \n（適用除外） \n第 18 条 労働基準法第 41 条第２号または第３号に該当する管理監督者または監視断続労\n働従事者等については、本節の規定（深夜労働に関する規定を除く。 ）にかかわ\nらず勤務を命じ、本節の規定を適用しないことがある。 \n \n第２節 休暇等 \n（年次有給休暇） \n第 19 条 社員に対し、次の表の勤続年数に応じ、日数の年次有給休暇を与える。ただし、 \n前１年間（採用当初は前６ヶ月）の出勤率が８割に満たない社員には当該期間に\n対する年次有給休暇は付与しない。 \n 勤 続 年 数 0.5 1.5 2.5 3.5 4.5 5.5 6.5 年以上 \n付 与 日 数 10 11 12 14 16 18 20 日 \n \n(2) 年次有給休暇を取得しようとする場合は、前日までに所定の手続きにより、部門\n長まで届け出なければならない。 \n(3) 年次有給休暇は、社員が指定した時期に与える。ただし、事業の都合によりやむ\nを得ない場合には他の時期に変更することがある。 \n(4) 当該年度に行使しなかった年次有給休暇は、次年度に限り繰越すことができる。 \n(5) 年次有給休暇を取得した期間については、通常の賃金を支払う。 \n \n（年次有給休暇の計画的付与） \n第 20 条 社員代表との協定により、年次有給休暇を計画的に付与することとした場合に\nは、前条第３項の規定にかかわらず、当該協定の定めるところにより年次有給休\n暇を付与するものとする。\n\n２．60 時間を超える時間外勤務割増賃金 \n 基本給（職能給・職務給） \n＋家族手当、通勤手当を除く諸手当 ×1.50×時間外勤務時\n間数 1 ヶ月平均所定勤務時間 \n\n② 休日勤務割増賃金 \n 基本給（職能給・職務給） \n＋家族手当、通勤手当を除く諸手当 ×1.35×休日勤務時間数 \n1 ヶ月平均所定勤務時間 \n\n③ 深夜勤務割増賃金 \n 基本給（職能給・職務給） \n＋家族手当、通勤手当を除く諸手当 ×0.25×深夜勤務時間数 \n1 ヶ月平均所定勤務時間 \n \n(2) 所定勤務時間と固定残業時間を超えて、または休日に勤務した時間が深夜にお\nよんだ場合は、それぞれ時間外勤務割増賃金または休日勤務割増賃金と深夜勤\n務割増賃金を合計した割増賃金を支給する。 \n(3) 第１項の１ヶ月の平均所定勤務時間数は次の算式により計算する。 \n （365 － 年間所定休日日数）×１日の所定勤務時間数   12 \n \n(4) 1 時間あたりの賃金額及び割増賃金額に円未満の端数が生じた場合、1 円未満の\n端数を 1 円に切り上げるものとする。 \n  \n（成績手当） \n第 16 条 会社に対して特別な貢献があったと会社が認めた者に対し、成績手当を支給す\nることがある。成績手当の額は、その貢献度合いに応じて都度決めるものとす\nる。 \n  \n（家族手当） \n第 17 条 次の家族を扶養している社員に対して家族手当を支給する。 \n ① 配偶者          月額 10,000 円 \n ② 16 歳未満の子１人につき   月額 5,000 円 \n  \n（調整手当） \n第 18 条 必要に応じ、会社が認めた者に対し、調整手当を支給することがある。調整手\n当の額は、その都度決めるものとする。\n\n【質問】\n私は正社員で入社1年目です。有給は年何回取れますか？', 'role': 'user'}], 'model': 'gpt-5.1', 'stream': False}}
+2026-01-12 08:25:32 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | close.started
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | close.complete
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7ff270e0ce30>
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7ff270e23150> server_hostname='api.openai.com' timeout=None
+2026-01-12 08:25:32 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7ff270e0fcb0>
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | send_request_body.complete
+2026-01-12 08:25:32 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
+2026-01-12 08:25:35 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 12 Jan 2026 08:25:34 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'2272'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'x-envoy-upstream-service-time', b'2293'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'500000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'498097'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'228ms'), (b'x-request-id', b'req_6d8bbc11e38b453ea22a4bf94f3ceafd'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9bcb4384ced69635-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-01-12 08:25:35 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 08:25:35 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
+2026-01-12 08:25:35 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
+2026-01-12 08:25:35 | DEBUG | httpcore.http11 | trace | response_closed.started
+2026-01-12 08:25:35 | DEBUG | httpcore.http11 | trace | response_closed.complete
+2026-01-12 08:25:35 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Mon, 12 Jan 2026 08:25:34 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-8h9z34f8lpywhopvlvfbenye', 'openai-processing-ms': '2272', 'openai-project': 'proj_Il1h3X7vESPR7KXprIiKIv6d', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '2293', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '500000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '498097', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '228ms', 'x-request-id': 'req_6d8bbc11e38b453ea22a4bf94f3ceafd', 'x-openai-proxy-wasm': 'v0.1', 'cf-cache-status': 'DYNAMIC', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '9bcb4384ced69635-KIX', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-01-12 08:25:35 | DEBUG | openai._base_client | request | request_id: req_6d8bbc11e38b453ea22a4bf94f3ceafd
+2026-01-12 08:25:35 | INFO | common.telemetry | wrapper | 関数askの実行時間 completed | elapsed_ms=3347.49 | function=ask
