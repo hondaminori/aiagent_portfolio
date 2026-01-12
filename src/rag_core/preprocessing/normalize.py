@@ -71,7 +71,6 @@ def clean_documents(documents: list[Document]) -> list[Document]:
     cleaned_documents = []
 
     for doc in documents:
-
         page_content = doc.page_content.replace('\r\n', '\n').replace('\r', '\n')
         page_content = re.sub(r'(\n[ \t]*){3,}', '\n\n', page_content)
 

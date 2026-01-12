@@ -41,10 +41,7 @@ def build_vectorstore(
 
     return vectordb
 
-def load_vectorstore(
-    embedding: OpenAIEmbeddings,
-    collection_name: str
-):
+def load_vectorstore(embedding: OpenAIEmbeddings):
     """
     永続化された VectorStore（LangChain）のインスタンスを読み込む。
 
@@ -56,7 +53,7 @@ def load_vectorstore(
     """
 
     vectordb = Chroma(
-        collection_name=collection_name,
+        collection_name=COLLECTION_NAME,
         embedding_function=embedding,
         persist_directory=CHROMA_PERSIST_DIR
     )

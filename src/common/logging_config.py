@@ -1,12 +1,9 @@
-from __future__ import annotations
-
-import logging
-import os
 from logging.handlers import TimedRotatingFileHandler
-
 from common.paths import LOG_DIR
 from common.config import LOG_LEVEL, LOG_DEST
 
+import logging
+import os
 import functools
 
 class DefaultFieldsFilter(logging.Filter):
@@ -25,9 +22,7 @@ def setup_logging() -> None:
     - handler は1つだけ
     - 起動点（bootstrap）で必ず最初に呼ぶこと
     """
-    # log_level = os.getenv("LOG_LEVEL", "INFO").upper()
     log_level = LOG_LEVEL.upper()
-    # log_dest = os.getenv("LOG_DEST", "stdout").strip().lower()
     log_dest = LOG_DEST.strip().lower()
     app_name = os.getenv("APP_NAME", "unknown").strip()
 
@@ -38,7 +33,6 @@ def setup_logging() -> None:
     root.handlers.clear()
 
     formatter = logging.Formatter(
-        # fmt="%(asctime)s | %(levelname)s | %(name)s | %(funcName)s | %(target_func)s | %(message)s",
         fmt="%(asctime)s | %(levelname)s | %(name)s | %(funcName)s | %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )

@@ -13,7 +13,7 @@ def init_app(app_name: str) -> None:
     - logging 初期化
     """
 
-    load_dotenv(ENV_PATH, override=True)
+    load_dotenv(ENV_PATH)
     os.environ.setdefault("APP_NAME", app_name)
 
     if not EMBEDDING_MODEL_NAME:

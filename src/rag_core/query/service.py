@@ -48,12 +48,9 @@ def create_service_from_env() -> RAGService:
     """
     api_key = os.getenv("OPENAI_API_KEY")
 
-    embedding = create_embedding(api_key, EMBEDDING_MODEL_NAME)
+    embedding = create_embedding()
 
-    vectordb = load_vectorstore(
-        embedding=embedding,
-        collection_name=COLLECTION_NAME
-    )
+    vectordb = load_vectorstore(embedding=embedding)
 
     retriever = create_retriever(
         vectordb=vectordb
