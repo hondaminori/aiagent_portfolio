@@ -17,7 +17,7 @@ from rag_core.query.retrieve import create_retriever
 from rag_core.query.generate import create_chain
 from common.logging_config import log_start_end
 from common.prompts import SYSTEM_PROMPT
-from common.config import EMBEDDING_MODEL_NAME, COLLECTION_NAME, SEARCH_TYPE, SEARCH_KWARGS, CHAT_MODEL_NAME
+from common.config import CHAT_MODEL_NAME
 import os
 
 class RAGResponse(TypedDict):
@@ -60,6 +60,8 @@ def create_service_from_env() -> RAGService:
         model_name=CHAT_MODEL_NAME,
         temperature=0,
         api_key=api_key,
+        # max_completion_tokens=600,
+        # reasoning_effort="none"
     )
 
     chain = create_chain(

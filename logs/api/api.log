@@ -785,3 +785,257 @@
 2026-01-12 10:30:25 | INFO | api.app.main | on_startup | API が起動しました
 2026-01-12 10:30:26 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
 2026-01-12 10:30:26 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 10:48:10 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 10:48:10 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 10:48:10 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 10:48:10 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 10:48:10 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 10:48:10 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 10:48:10 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 10:48:10 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 10:48:10 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 10:48:10 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 10:48:10 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 10:48:11 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 10:48:11 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 10:48:11 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 10:48:11 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 10:48:12 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 10:52:16 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 10:52:16 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 10:52:16 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 10:52:17 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 10:52:17 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 10:52:17 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 10:52:17 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 10:52:17 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 10:52:17 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 10:52:17 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 10:52:17 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 10:52:17 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 10:52:17 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 10:52:17 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 10:52:17 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 10:52:18 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 10:53:23 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 10:53:23 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 10:53:24 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 10:53:24 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 10:53:24 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 10:53:24 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 10:53:24 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 10:53:24 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 10:53:24 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 10:53:24 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 10:53:24 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 10:53:24 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 10:53:24 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 10:53:24 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 10:53:25 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 10:53:25 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 10:54:30 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 10:54:30 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 10:54:30 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 10:54:30 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 10:54:31 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 10:54:31 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 10:54:31 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 10:54:31 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 10:54:31 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 10:54:31 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 10:54:31 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 10:54:31 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 10:54:31 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 10:54:31 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 10:54:31 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 10:54:32 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 10:55:57 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 10:55:57 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 10:55:57 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 10:55:57 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 10:55:58 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 10:55:58 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 10:55:58 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 10:55:58 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 10:55:58 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 10:55:58 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 10:55:58 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 10:55:58 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 10:55:58 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 10:55:58 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 10:55:58 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 10:55:59 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 12:31:02 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 12:31:02 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 12:31:03 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 12:31:03 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 12:31:03 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 12:31:03 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 12:31:04 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 12:31:04 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 12:31:04 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:31:04 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:31:04 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:31:04 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:31:04 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 12:31:04 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 12:31:04 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 12:31:05 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 12:46:15 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 12:46:15 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 12:46:16 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 12:46:16 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 12:46:16 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 12:46:16 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 12:46:16 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 12:46:16 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 12:46:16 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:46:16 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:46:16 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:46:16 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:46:16 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 12:46:16 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 12:46:17 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 12:46:17 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 12:46:59 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 12:46:59 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 12:47:00 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 12:47:00 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 12:47:00 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 12:47:00 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 12:47:00 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 12:47:00 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 12:47:00 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:47:00 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:47:00 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:47:00 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:47:00 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 12:47:00 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 12:47:00 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 12:47:01 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 12:47:48 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 12:47:48 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 12:47:49 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 12:47:49 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 12:47:49 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 12:47:49 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 12:47:49 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 12:47:49 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 12:47:49 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:47:49 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:47:49 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:47:49 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:47:49 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 12:47:49 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 12:47:50 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 12:47:51 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 12:49:37 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 12:49:37 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 12:49:38 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 12:49:38 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 12:49:38 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 12:49:38 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 12:49:38 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 12:49:38 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 12:49:38 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:49:38 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:49:38 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:49:38 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:49:38 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 12:49:38 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 12:49:39 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 12:49:39 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 12:53:37 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 12:53:37 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 12:53:37 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 12:53:38 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 12:53:38 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 12:53:38 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 12:53:38 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 12:53:38 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 12:53:38 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:53:38 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:53:38 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:53:38 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:53:38 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 12:53:38 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 12:53:38 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 12:53:39 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 12:54:51 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 12:54:51 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 12:54:52 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 12:54:52 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 12:54:52 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 12:54:52 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 12:54:52 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 12:54:52 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 12:54:52 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:54:52 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:54:52 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:54:52 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:54:52 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 12:54:52 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 12:54:52 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 12:54:53 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 12:55:44 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 12:55:44 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 12:55:45 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 12:55:45 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 12:55:45 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 12:55:45 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 12:55:45 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 12:55:45 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 12:55:45 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:55:45 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:55:45 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:55:45 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:55:45 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 12:55:45 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 12:55:46 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 12:55:46 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 12:59:02 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 12:59:02 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 12:59:03 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 12:59:03 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 12:59:03 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 12:59:03 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 12:59:03 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 12:59:03 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 12:59:03 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:59:03 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 12:59:03 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:59:03 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 12:59:03 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 12:59:03 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 12:59:04 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 12:59:04 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-12 13:02:16 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 13:02:16 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 13:02:17 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 13:02:17 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 13:02:17 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 13:02:17 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 13:02:17 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 13:02:17 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 13:02:17 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 13:02:17 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 13:02:17 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 13:02:17 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 13:02:17 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 13:02:17 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 13:02:26 | INFO | rag_core.query.service | wrapper | start
+2026-01-12 13:02:26 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-12 13:02:27 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-12 13:02:27 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-12 13:02:27 | DEBUG | chromadb.config | start | Starting component System
+2026-01-12 13:02:27 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-12 13:02:27 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-12 13:02:27 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-12 13:02:27 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 13:02:27 | INFO | rag_core.query.generate | wrapper | start
+2026-01-12 13:02:27 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 13:02:27 | INFO | rag_core.query.generate | wrapper | end
+2026-01-12 13:02:27 | INFO | rag_core.query.service | wrapper | end
+2026-01-12 13:02:27 | INFO | api.app.main | on_startup | API が起動しました
+2026-01-12 13:02:27 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-12 13:02:28 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15

@@ -37,6 +37,6 @@ def format_retrieved_docs(retrieved_docs: Iterable[Document]) -> str:
         str: 整形されたテキスト
     """
     retrieved_str = "\n\n".join(d.page_content for d in retrieved_docs)
-    logging.debug(retrieved_str)
-
+    logging.debug(f"retrieve後の文字列: {retrieved_str}")
+ 
     return retrieved_str
