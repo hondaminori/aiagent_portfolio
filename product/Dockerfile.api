@@ -7,6 +7,7 @@ ENV PYTHONUNBUFFERED=1
 
 # 作業ディレクトリ
 WORKDIR /app
+ENV PYTHONPATH=/app
 
 # OSパッケージ（最低限）
 RUN apt-get update \

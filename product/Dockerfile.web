@@ -32,4 +32,4 @@ RUN mkdir -p /app/doc /app/log /app/db
 EXPOSE 8501
 
 # 起動コマンド（Web: Streamlit）
-CMD ["streamlit", "run", "src/apps/web/app/main.py", "--server.address=0.0.0.0", "--server.port=8501"]
+CMD ["streamlit", "run", "src/web/app/main.py", "--server.address=0.0.0.0", "--server.port=8501"]
