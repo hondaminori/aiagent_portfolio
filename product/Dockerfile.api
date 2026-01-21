@@ -1,0 +1,35 @@
+# Python公式イメージ（軽量・安定）
+FROM python:3.12-slim
+
+# Pythonのログ即時出力（Docker定番）
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# 作業ディレクトリ
+WORKDIR /app
+
+# OSパッケージ（最低限）
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       build-essential \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# requirements.txt を先にコピー（キャッシュ最適化）
+COPY requirements.txt .
+
+# Pythonライブラリをインストール
+RUN pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
+
+# アプリケーションコード
+COPY src ./src
+
+# 永続化ディレクトリ（ホストからマウントされる）
+RUN mkdir -p /app/doc /app/log /app/db
+
+# ポート（FastAPI）
+EXPOSE 8000
+
+# 起動コマンド（API）
+CMD ["uvicorn", "src.apps.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

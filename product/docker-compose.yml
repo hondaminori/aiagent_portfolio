@@ -1,0 +1,24 @@
+services:
+  aidemo01-web:
+    build:
+      context: ..
+      dockerfile: product/Dockerfile.web
+    container_name: aidemo01-web
+    ports:
+      - "8501:8501"
+    volumes:
+      - /srv/aidemo/aidemo01/doc:/app/doc
+      - /srv/aidemo/aidemo01/log:/app/log
+      - /srv/aidemo/aidemo01/db:/app/db
+
+  aidemo01-api:
+    build:
+      context: ..
+      dockerfile: product/Dockerfile.api
+    container_name: aidemo01-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - /srv/aidemo/aidemo01/doc:/app/doc
+      - /srv/aidemo/aidemo01/log:/app/log
+      - /srv/aidemo/aidemo01/db:/app/db
