@@ -27,7 +27,7 @@ RUN pip install --upgrade pip \
 COPY src ./src
 
 # 永続化ディレクトリ（ホストからマウントされる）
-RUN mkdir -p /app/doc /app/log /app/db
+RUN mkdir -p /app/docs /app/logs /app/db
 
 # ポート（Streamlit）
 EXPOSE 8501
