@@ -16,8 +16,8 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# requirements.txt を先にコピー（キャッシュ最適化）
 COPY requirements.txt .
+COPY pyproject.toml .
 
 # Pythonライブラリをインストール
 RUN pip install --upgrade pip \

@@ -21,7 +21,10 @@ FastAPIを使用して開発しました。
 project-root/  
 ├─ config  
 │　　└─ .env          文字列ベースの設定値を保存  
+├─ product/     本番環境用のDockerfile関連  
+│
 └─ src/  
+　　│  
 　　├─ rag_core/         RAG検索の本体  
 　　│　　└─ preprocessing/ PDF読み込みや整形、チャンク化、ベクトルDBへの取り込み  
 　　│　　└─ query/         検索実行  
@@ -31,8 +34,7 @@ project-root/
 　　│　　└─ config.py      設定値（Pythonの型で格納する必要があるもの）  
 　　│　　└─ propmts.py     プロンプト  
 　　│  
-　　└─ apps/            アプリケーションディレクトリ  
-　　　　　├─ api/       WebAPI（FastAPI）  
-　　　　　│　　└─ app/  
-　　　　　└─ web/       WebUIサンプル、管理系画面  
-　　　　　　　　└─ app/  
+　　├─ api/       WebAPI（FastAPI）  
+　　│　　└─ app/  
+　　└─ web/       WebUIサンプル、管理系画面  
+　　 　　└─ app/  

@@ -4,6 +4,8 @@ services:
       context: ..
       dockerfile: product/Dockerfile.web
     container_name: aidemo01-web
+    env_file:
+      - ../config/.env
     ports:
       - "8501:8501"
     volumes:
@@ -15,6 +17,8 @@ services:
     build:
       context: ..
       dockerfile: product/Dockerfile.api
+    env_file:
+      - ../config/.env
     container_name: aidemo01-api
     ports:
       - "8000:8000"
