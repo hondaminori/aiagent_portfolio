@@ -23,6 +23,6 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - /srv/aidemo/aidemo01/docs:/apps/docs
+      - /srv/aidemo/aidemo01/docs:/app/docs
       - /srv/aidemo/aidemo01/logs:/app/logs
       - /srv/aidemo/aidemo01/db:/app/db
