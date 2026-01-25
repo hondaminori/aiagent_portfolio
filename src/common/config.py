@@ -27,3 +27,7 @@ LOG_DEST = "file" # file / stdout
 
 # 精度向上(-1：除外機能は無効、0が1ページ目)
 SKIP_LEADING_PAGES = 0
+
+# LangSmith
+LANGCHAIN_TRACING_V2 = "true"
+LANGCHAIN_PROJECT = COLLECTION_NAME # 今のところ同じものにしている

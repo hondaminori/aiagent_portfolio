@@ -1,0 +1,99 @@
+2026-01-23 05:16:03 | INFO | __main__ | wrapper | start
+2026-01-23 05:16:04 | INFO | rag_core.query.service | wrapper | start
+2026-01-23 05:16:04 | INFO | rag_core.preprocessing.embed | wrapper | start
+2026-01-23 05:16:04 | INFO | rag_core.preprocessing.embed | wrapper | end
+2026-01-23 05:16:04 | INFO | chromadb.telemetry.product.posthog | __init__ | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-23 05:16:04 | DEBUG | chromadb.config | start | Starting component System
+2026-01-23 05:16:04 | DEBUG | chromadb.config | start | Starting component Posthog
+2026-01-23 05:16:04 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-23 05:16:04 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-23 05:16:04 | INFO | rag_core.query.generate | wrapper | start
+2026-01-23 05:16:04 | INFO | rag_core.query.generate | wrapper | start
+2026-01-23 05:16:04 | INFO | rag_core.query.generate | wrapper | end
+2026-01-23 05:16:04 | INFO | rag_core.query.generate | wrapper | end
+2026-01-23 05:16:04 | INFO | rag_core.query.service | wrapper | end
+2026-01-23 05:16:04 | INFO | __main__ | main | query: 時短について教えてください。
+2026-01-23 05:16:05 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/embeddings', 'files': None, 'idempotency_key': 'stainless-python-retry-7c913409-683e-482f-a6c3-a73db521be74', 'post_parser': <function Embeddings.create.<locals>.parser at 0x7f8ce8f89580>, 'json_data': {'input': [[39177, 163, 253, 255, 20230, 59739, 16995, 38144, 8067, 247, 58942, 38144, 72315, 1811]], 'model': 'text-embedding-3-small', 'encoding_format': 'base64'}}
+2026-01-23 05:16:05 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/embeddings
+2026-01-23 05:16:05 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2026-01-23 05:16:05 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8ce010c290>
+2026-01-23 05:16:05 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7f8ce96a82d0> server_hostname='api.openai.com' timeout=None
+2026-01-23 05:16:05 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8ce9075ac0>
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | send_request_body.complete
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
+2026-01-23 05:16:05 | DEBUG | urllib3.connectionpool | _new_conn | Starting new HTTPS connection (1): us.i.posthog.com:443
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 23 Jan 2026 05:15:50 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-model', b'text-embedding-3-small'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'108'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'via', b'envoy-router-b474d4d74-ltqzm'), (b'x-envoy-upstream-service-time', b'142'), (b'x-ratelimit-limit-requests', b'3000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'2999'), (b'x-ratelimit-remaining-tokens', b'999986'), (b'x-ratelimit-reset-requests', b'20ms'), (b'x-ratelimit-reset-tokens', b'0s'), (b'x-request-id', b'req_c397a3e579a844e48c49df00e30cf761'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=HZbgqsH_4.RDeidUaq4OsT6ivMyR4SqBzUIn9.jAxLo-1769145350-1.0.1.1-aDx9Y4ZZdXGVpIrLsgE46HCliTB96b8_7DNzQjAx.ezXluewb6wCvwz6uCoO1ozws9xn3eeN3mBC50E6gnzSB10mCfKAOOLGWnG_TO3q35w; path=/; expires=Fri, 23-Jan-26 05:45:50 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=nW47rMxPGIIANUuLUx3lLkrHetPFXm08O117k88cJYE-1769145350970-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9c24d0c9dc5e00b8-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-01-23 05:16:05 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | response_closed.started
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | response_closed.complete
+2026-01-23 05:16:05 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/embeddings "200 OK" Headers([('date', 'Fri, 23 Jan 2026 05:15:50 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-allow-origin', '*'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-model', 'text-embedding-3-small'), ('openai-organization', 'user-8h9z34f8lpywhopvlvfbenye'), ('openai-processing-ms', '108'), ('openai-project', 'proj_Il1h3X7vESPR7KXprIiKIv6d'), ('openai-version', '2020-10-01'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('via', 'envoy-router-b474d4d74-ltqzm'), ('x-envoy-upstream-service-time', '142'), ('x-ratelimit-limit-requests', '3000'), ('x-ratelimit-limit-tokens', '1000000'), ('x-ratelimit-remaining-requests', '2999'), ('x-ratelimit-remaining-tokens', '999986'), ('x-ratelimit-reset-requests', '20ms'), ('x-ratelimit-reset-tokens', '0s'), ('x-request-id', 'req_c397a3e579a844e48c49df00e30cf761'), ('x-openai-proxy-wasm', 'v0.1'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=HZbgqsH_4.RDeidUaq4OsT6ivMyR4SqBzUIn9.jAxLo-1769145350-1.0.1.1-aDx9Y4ZZdXGVpIrLsgE46HCliTB96b8_7DNzQjAx.ezXluewb6wCvwz6uCoO1ozws9xn3eeN3mBC50E6gnzSB10mCfKAOOLGWnG_TO3q35w; path=/; expires=Fri, 23-Jan-26 05:45:50 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=nW47rMxPGIIANUuLUx3lLkrHetPFXm08O117k88cJYE-1769145350970-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9c24d0c9dc5e00b8-KIX'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2026-01-23 05:16:05 | DEBUG | openai._base_client | request | request_id: req_c397a3e579a844e48c49df00e30cf761
+2026-01-23 05:16:05 | INFO | rag_core.query.retrieve | wrapper | start
+2026-01-23 05:16:05 | DEBUG | root | format_retrieved_docs | retrieve後の文字列: (3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮
+を開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし
+て、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担
+当者に申し出なければならない。 
+  
+（介護短時間勤務） 
+第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ
+り、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午
+前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 
+(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は
+拒むことができる。 
+ 1  日雇従業員 
+ 2  労使協定によって除外された次の従業員 
+ · 入社１年未満の従業員 
+ · １週間の所定労働日数が２日以下の従業員
+
+(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮
+を開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし
+て、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担
+当者に申し出なければならない。 
+  
+（介護短時間勤務） 
+第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ
+り、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午
+前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 
+(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は
+拒むことができる。 
+ 1  日雇従業員 
+ 2  労使協定によって除外された次の従業員 
+ · 入社１年未満の従業員 
+ · １週間の所定労働日数が２日以下の従業員
+2026-01-23 05:16:05 | INFO | rag_core.query.retrieve | wrapper | end
+2026-01-23 05:16:05 | DEBUG | openai._base_client | _build_request | Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'X-Stainless-Raw-Response': 'true'}, 'files': None, 'idempotency_key': 'stainless-python-retry-f44bfd6a-1b2b-4e44-b382-68647f1d21bb', 'json_data': {'messages': [{'content': 'あなたは社内文書を参照して質問に回答するAIアシスタントです。\n\n    以下のルールを厳守してください。\n    - 回答は提供されたコンテキストに基づいて行うこと\n    - コンテキストに記載がない内容は、推測をすること\n    - 例えば育休、育児休暇、育児休業、といった類義語も含めて対応すること\n    - もし類義語や関連する用語があれば、それらも考慮して回答すること\n      そしてそのような回答をするときは「（類義語や関連用語）も含めて」と明示すること\n    - 回答は日本語で、簡潔かつ分かりやすく記述すること\n    - 結論から述べ、100文字から200文字程度で簡潔に回答してください。\n    - 不明な場合は、以下のように回答すること。\n    「就業規則に該当する記載がありません。恐れ入りますが質問を見直すか、人事にお問い合わせください。」\n    「判断できなかった理由は以下の通りです：（理由を具体的に記載）」', 'role': 'system'}, {'content': '【コンテキスト】\n(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮\nを開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし\nて、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担\n当者に申し出なければならない。 \n  \n（介護短時間勤務） \n第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ\nり、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午\n前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 \n(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は\n拒むことができる。 \n 1  日雇従業員 \n 2  労使協定によって除外された次の従業員 \n · 入社１年未満の従業員 \n · １週間の所定労働日数が２日以下の従業員\n\n(3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮\nを開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし\nて、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担\n当者に申し出なければならない。 \n  \n（介護短時間勤務） \n第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ\nり、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午\n前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。 \n(2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は\n拒むことができる。 \n 1  日雇従業員 \n 2  労使協定によって除外された次の従業員 \n · 入社１年未満の従業員 \n · １週間の所定労働日数が２日以下の従業員\n\n【質問】\n時短について教えてください。', 'role': 'user'}], 'model': 'gpt-4o-mini', 'stream': False, 'temperature': 0.0}}
+2026-01-23 05:16:05 | DEBUG | openai._base_client | request | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-01-23 05:16:05 | DEBUG | httpcore.connection | trace | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2026-01-23 05:16:05 | DEBUG | httpcore.connection | trace | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8ce90d1d60>
+2026-01-23 05:16:05 | DEBUG | httpcore.connection | trace | start_tls.started ssl_context=<ssl.SSLContext object at 0x7f8ce8f72dd0> server_hostname='api.openai.com' timeout=None
+2026-01-23 05:16:05 | DEBUG | httpcore.connection | trace | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f8cc2a37680>
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | send_request_headers.started request=<Request [b'POST']>
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | send_request_headers.complete
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | send_request_body.started request=<Request [b'POST']>
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | send_request_body.complete
+2026-01-23 05:16:05 | DEBUG | httpcore.http11 | trace | receive_response_headers.started request=<Request [b'POST']>
+2026-01-23 05:16:05 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-23 05:16:06 | DEBUG | urllib3.connectionpool | _make_request | https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+2026-01-23 05:16:08 | DEBUG | httpcore.http11 | trace | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 23 Jan 2026 05:15:53 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-8h9z34f8lpywhopvlvfbenye'), (b'openai-processing-ms', b'2527'), (b'openai-project', b'proj_Il1h3X7vESPR7KXprIiKIv6d'), (b'openai-version', b'2020-10-01'), (b'x-envoy-upstream-service-time', b'2549'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199156'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'253ms'), (b'x-request-id', b'req_f911d168b87b448a96cb14854d3944e9'), (b'x-openai-proxy-wasm', b'v0.1'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=DPgOU5YAHaljMQRJec_kzF3kgCOIgJ7j8kmEKlSErlg-1769145353-1.0.1.1-KWZ2RQo7S6.kwWjd._8Hwk.IT3fnZrhm0IND7LFiYV6oGli20Z_0XvBIk.n.wSiUOdtm2AFv1M1yZRF0NiGaXtvHv0ZKPgty_bcYgE7PZ.w; path=/; expires=Fri, 23-Jan-26 05:45:53 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=_hAEwrW4iyx1RwikDjP0GK8u.oNSFqQAOHrLqp2T27c-1769145353959-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9c24d0cd69fa9678-KIX'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-01-23 05:16:08 | INFO | httpx | _send_single_request | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-23 05:16:08 | DEBUG | httpcore.http11 | trace | receive_response_body.started request=<Request [b'POST']>
+2026-01-23 05:16:08 | DEBUG | httpcore.http11 | trace | receive_response_body.complete
+2026-01-23 05:16:08 | DEBUG | httpcore.http11 | trace | response_closed.started
+2026-01-23 05:16:08 | DEBUG | httpcore.http11 | trace | response_closed.complete
+2026-01-23 05:16:08 | DEBUG | openai._base_client | request | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Fri, 23 Jan 2026 05:15:53 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-8h9z34f8lpywhopvlvfbenye'), ('openai-processing-ms', '2527'), ('openai-project', 'proj_Il1h3X7vESPR7KXprIiKIv6d'), ('openai-version', '2020-10-01'), ('x-envoy-upstream-service-time', '2549'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199156'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '253ms'), ('x-request-id', 'req_f911d168b87b448a96cb14854d3944e9'), ('x-openai-proxy-wasm', 'v0.1'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=DPgOU5YAHaljMQRJec_kzF3kgCOIgJ7j8kmEKlSErlg-1769145353-1.0.1.1-KWZ2RQo7S6.kwWjd._8Hwk.IT3fnZrhm0IND7LFiYV6oGli20Z_0XvBIk.n.wSiUOdtm2AFv1M1yZRF0NiGaXtvHv0ZKPgty_bcYgE7PZ.w; path=/; expires=Fri, 23-Jan-26 05:45:53 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=_hAEwrW4iyx1RwikDjP0GK8u.oNSFqQAOHrLqp2T27c-1769145353959-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '9c24d0cd69fa9678-KIX'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2026-01-23 05:16:08 | DEBUG | openai._base_client | request | request_id: req_f911d168b87b448a96cb14854d3944e9
+2026-01-23 05:16:08 | INFO | common.telemetry | wrapper | 関数askの実行時間 completed | elapsed_ms=3697.80 | function=ask
+2026-01-23 05:16:08 | INFO | __main__ | main | 質問に返答しました
+2026-01-23 05:16:08 | INFO | __main__ | main | 回答: 短時間勤務（時短）については、要介護状態にある家族を介護する従業員が申し出ることで、所定労働時間を午前9時から午後4時までの6時間に変更できる制度があります。申出は、短縮を開始する日の1か月前までに行う必要があります。ただし、日雇従業員や入社1年未満の従業員、週の所定労働日数が2日以下の従業員は申出が拒否されることがあります。
+2026-01-23 05:16:08 | DEBUG | __main__ | main | 判断根拠や参照箇所: (3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮 を開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし て、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担 当者に申し出なければならない。     （介護短時間勤務）  第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ り、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午 前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。  (2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は 拒むことができる。   1  日雇従業員   2  労使協定によって除外された次の従業員   · 入社１年未満の従業員   · １週間の所定労働日数が２日以下の従業員
+2026-01-23 05:16:08 | DEBUG | __main__ | main | 判断根拠や参照箇所: (3) 申出をしようとする者は、１回につき、１か月以上１年以内の期間について、短縮 を開始しようとする日及び短縮を終了しようとする日を明らかにして、原則とし て、短縮を開始しようとする日の１か月前までに、短時間勤務申出書により人事担 当者に申し出なければならない。     （介護短時間勤務）  第９条 要介護状態にある家族を介護する従業員(日雇従業員を除く)は、申し出ることによ り、就業規則の所定労働時間を、午前９時から午後４時まで(うち休憩時間は、午 前 12 時から午後１時までの１時間とする。)の６時間に変更することができる。  (2) 前項にかかわらず、次のいずれかに該当する従業員からの介護短時間勤務の申出は 拒むことができる。   1  日雇従業員   2  労使協定によって除外された次の従業員   · 入社１年未満の従業員   · １週間の所定労働日数が２日以下の従業員
+2026-01-23 05:16:08 | INFO | __main__ | wrapper | end
+2026-01-23 05:16:08 | DEBUG | httpcore.connection | trace | close.started
+2026-01-23 05:16:08 | DEBUG | httpcore.connection | trace | close.complete
+2026-01-23 05:16:08 | DEBUG | httpcore.connection | trace | close.started
+2026-01-23 05:16:08 | DEBUG | httpcore.connection | trace | close.complete
