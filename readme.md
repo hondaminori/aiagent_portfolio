@@ -22,7 +22,6 @@ project-root/
 ├─ config  
 │　　└─ .env          文字列ベースの設定値を保存  
 ├─ product/     本番環境用のDockerfile関連  
-│
 └─ src/  
 　　│  
 　　├─ rag_core/         RAG検索の本体  
@@ -38,3 +37,7 @@ project-root/
 　　│　　└─ app/  
 　　└─ web/       WebUIサンプル、管理系画面  
 　　 　　└─ app/  
+
+
+ランサーズ、クラウドワークスで dms3lj という名前で活動しています。
+お手伝いできることがあればぜひ連絡ください！
